@@ -1,0 +1,564 @@
+@font-face {
+  font-family: "Alegreya";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/Alegreya-Bold.woff2"); }
+@font-face {
+  font-family: "Alegreya";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Alegreya-Regular.woff2"); }
+@font-face {
+  font-family: "RogueScript";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Alegreya-Regular.woff2"); }
+@font-face {
+  font-family: "Sanchez";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Sanchez-Regular.woff2"); }
+@font-face {
+  font-family: "Sanchez";
+  font-style: italic;
+  font-weight: normal;
+  src: url("../fonts/Sanchez-Italic.woff2"); }
+@font-face {
+  font-family: "Scriptina";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Scriptina.woff2"); }
+@font-face {
+  font-family: "Playfair";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/PlayfairDisplay-Bold.woff2"); }
+* {
+  padding: 0;
+  margin: 0; }
+
+::-webkit-scrollbar {
+  width: 5px; }
+
+::-webkit-scrollbar-track {
+  background: #564f4c; }
+
+::-webkit-scrollbar-thumb {
+  background: #000000; }
+
+header {
+  z-index: 4;
+  position: fixed;
+  display: inline-flex;
+  line-height: 30px;
+  background-color: #56534c;
+  height: 50px;
+  width: 100%; }
+  header div {
+    color: #ffffff;
+    display: inline-flex;
+    justify-content: center;
+    width: 25%;
+    font-family: Scriptina;
+    letter-spacing: 7px;
+    font-size: 30px; }
+    header div img {
+      padding: 0 15px;
+      width: 15px; }
+  header .socials {
+    align-items: center; }
+  header menu {
+    color: #ffffff;
+    display: inline-flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Alegreya;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 12px; }
+  header a {
+    color: #ffffff;
+    line-height: 0;
+    text-decoration: none;
+    letter-spacing: 4px; }
+  header a:hover {
+    color: #cece43; }
+
+main .pastry {
+  color: #ffffff;
+  background: url("../images/hero_img.jpg");
+  background-size: cover;
+  height: 100vh; }
+  main .pastry .shadow {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    margin: 25% 0 0 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    background-image: radial-gradient(circle at center, #000000 0%, rgba(0, 0, 0, 0) 60%); }
+  main .pastry div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-top: 50px;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden; }
+    main .pastry div p:nth-child(1) {
+      z-index: 2;
+      margin: 9% 0 3% 0;
+      font-family: Playfair;
+      letter-spacing: 3px;
+      font-size: 92px; }
+    main .pastry div p:nth-child(2) {
+      z-index: 2;
+      margin: 3% 0;
+      text-align: center;
+      font-family: Sanchez;
+      letter-spacing: 3px;
+      font-size: 24px; }
+    main .pastry div .ourMenu {
+      color: #ffffff;
+      z-index: 2;
+      margin: 3% 0;
+      font-family: Sanchez;
+      font-size: 14px;
+      padding: 15px 40px;
+      text-decoration: none;
+      letter-spacing: 3px;
+      background-color: rgba(86, 83, 76, 0.7);
+      border: 1px solid rgba(201, 201, 201, 0.9);
+      border-style: dashed; }
+      main .pastry div .ourMenu:hover {
+        background-color: #56534c;
+        border-style: solid; }
+  main .pastry .bulka {
+    position: absolute;
+    z-index: 3;
+    width: 50px;
+    bottom: -50px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); }
+main .artOfCakes {
+  background-image: url("../images/artOfCake_img.jpg");
+  background-size: cover;
+  height: 93vh; }
+  main .artOfCakes .leftcontent {
+    position: absolute;
+    width: 47%;
+    height: 80%;
+    margin: 3% 0 0 4%; }
+    main .artOfCakes .leftcontent div:nth-child(1) {
+      text-align: center;
+      width: 85%;
+      margin-left: 7.5%; }
+      main .artOfCakes .leftcontent div:nth-child(1) p:nth-child(1) {
+        font-family: Alegreya;
+        font-weight: bold;
+        font-size: 52px;
+        color: #56534c; }
+      main .artOfCakes .leftcontent div:nth-child(1) p:nth-child(2) {
+        font-family: Alegreya;
+        font-weight: bold;
+        font-size: 16px;
+        color: #a47d5e;
+        letter-spacing: 1px;
+        margin-bottom: 10%; }
+      main .artOfCakes .leftcontent div:nth-child(1) p:nth-child(3) {
+        font-family: Montserrat;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 1px;
+        color: #56534c;
+        line-height: 1.75em; }
+    main .artOfCakes .leftcontent div:nth-child(2) {
+      text-align: center;
+      width: 90%;
+      margin-left: 5%;
+      margin-top: 5%; }
+      main .artOfCakes .leftcontent div:nth-child(2) p:nth-child(1) {
+        font-family: Alegreya;
+        font-weight: bold;
+        font-size: 24px;
+        color: #56534c; }
+      main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(2) {
+        margin-left: 0;
+        margin-top: 2%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center; }
+        main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(2) p:nth-child(1), main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(2) p:nth-child(3) {
+          width: 120px;
+          margin: 0 5px;
+          padding: 2% 5%;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+          color: #56534c;
+          font-family: Alegreya;
+          font-weight: normal;
+          font-size: 24px; }
+        main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(2) img {
+          width: 120px;
+          box-shadow: 0 0 10px 1px black;
+          border-radius: 100%; }
+      main .artOfCakes .leftcontent div:nth-child(2) p:nth-child(3) {
+        font-family: Scriptina;
+        font-weight: bold;
+        font-size: 32px;
+        color: #a47d5e; }
+  main .artOfCakes .rightcontent {
+    position: absolute;
+    width: 47%;
+    height: 80%;
+    margin: 3% 0 0 48%; }
+    main .artOfCakes .rightcontent .img-top-left {
+      position: absolute;
+      background-image: url("../images/top_left.jpg");
+      background-size: cover;
+      width: 40%;
+      height: 40%;
+      margin: 5.5% 0 0 9.5%;
+      outline: 3px solid white;
+      outline-offset: -8px; }
+    main .artOfCakes .rightcontent .img-top-right {
+      position: absolute;
+      background-image: url("../images/top_right.jpg");
+      background-size: cover;
+      width: 40%;
+      height: 40%;
+      margin: 5.5% 0 0 52.5%;
+      outline: 3px solid white;
+      outline-offset: -8px; }
+    main .artOfCakes .rightcontent .img-bottom-right {
+      position: absolute;
+      background-image: url("../images/bottom_right.jpg");
+      background-size: cover;
+      width: 40%;
+      height: 40%;
+      margin: 43.5% 0 0 52.5%;
+      outline: 3px solid white;
+      outline-offset: -8px; }
+    main .artOfCakes .rightcontent .img-bottom-left {
+      position: absolute;
+      background-image: url("../images/bottom_left.jpg");
+      background-size: cover;
+      width: 40%;
+      height: 40%;
+      margin: 43.5% 0 0 9.5%;
+      outline: 3px solid white;
+      outline-offset: -8px; }
+    main .artOfCakes .rightcontent .img-center {
+      position: absolute;
+      background-image: url("../images/AOC_center.svg");
+      background-size: cover;
+      top: 48%;
+      left: 51%;
+      transform: translate(-50%, -50%);
+      width: 35%;
+      height: 40.25%; }
+      main .artOfCakes .rightcontent .img-center p {
+        font-family: Alegreya;
+        color: #c9b176;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 32.5%; }
+main .foodwidget {
+  background-image: url("../images/placeholder.png");
+  background-size: cover;
+  height: 93vh; }
+  main .foodwidget .container {
+    display: flex;
+    width: 1260px;
+    margin: 0 auto; }
+    main .foodwidget .container .foodcontainer {
+      background-color: white;
+      background: linear-gradient(45deg, transparent 50px, white 0) right;
+      margin-left: 94px;
+      margin-top: 140px;
+      margin-bottom: 108px;
+      width: 965px;
+      height: 512px;
+      display: flex; }
+      main .foodwidget .container .foodcontainer .rightc {
+        background-image: url("../images/windmill.png");
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        width: 545px;
+        height: 512px; }
+        main .foodwidget .container .foodcontainer .rightc .circle {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          background-color: white;
+          margin-left: -25px;
+          margin-top: -45px; }
+        main .foodwidget .container .foodcontainer .rightc .text1 {
+          margin-top: 80px;
+          margin-left: 65px;
+          font-size: 48px;
+          letter-spacing: 1px;
+          line-height: 30px;
+          color: #56534c;
+          font-weight: 700;
+          font-family: "Alegreya";
+          height: 65px; }
+          main .foodwidget .container .foodcontainer .rightc .text1 p {
+            margin: 0; }
+          main .foodwidget .container .foodcontainer .rightc .text1 .p1 {
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 30px;
+            color: #a47d5e;
+            font-weight: 700;
+            font-family: "Proxima Nova";
+            margin-top: 14px; }
+        main .foodwidget .container .foodcontainer .rightc .text2 {
+          margin-top: 70px;
+          margin-left: 65px;
+          font-size: 14px;
+          letter-spacing: 1px;
+          line-height: 20px;
+          color: #56534c;
+          font-family: "Proxima Nova"; }
+          main .foodwidget .container .foodcontainer .rightc .text2 p {
+            margin: 0; }
+        main .foodwidget .container .foodcontainer .rightc .rating {
+          margin-top: 50px;
+          margin-left: 65px; }
+          main .foodwidget .container .foodcontainer .rightc .rating .stars {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0; }
+            main .foodwidget .container .foodcontainer .rightc .rating .stars li {
+              margin-right: 10px; }
+        main .foodwidget .container .foodcontainer .rightc .slide {
+          margin-top: 37px;
+          margin-left: 65px; }
+          main .foodwidget .container .foodcontainer .rightc .slide .slidee {
+            display: flex;
+            list-style-type: none;
+            align-items: center;
+            padding: 0; }
+            main .foodwidget .container .foodcontainer .rightc .slide .slidee .img {
+              margin-left: 14px;
+              margin-right: 14px; }
+    main .foodwidget .container .kopie {
+      background-image: url("../images/VektorSmartobjekt.png");
+      background-color: white;
+      background-size: cover;
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      margin: 6% 0 0 50%; }
+      main .foodwidget .container .kopie p:nth-child(1) {
+        font-size: 20px;
+        font-family: "Alegreya";
+        color: #a47d5e;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 10%; }
+      main .foodwidget .container .kopie p:nth-child(2) {
+        font-size: 80px;
+        font-family: "Alegreya";
+        color: #dfc691;
+        text-transform: uppercase;
+        text-align: center; }
+      main .foodwidget .container .kopie p:nth-child(3) {
+        font-size: 18px;
+        font-family: "Alegreya";
+        color: #a6a297;
+        line-height: 1;
+        text-align: center; }
+main .Sandwich {
+  background-color: #f3f1e9;
+  background-size: cover;
+  height: 130vh; }
+  main .Sandwich p:nth-child(1) {
+    font-size: 48px;
+    font-family: "Alegreya";
+    color: #56534c;
+    text-align: center; }
+  main .Sandwich p:nth-child(2) {
+    font-weight: 500;
+    font-size: 12px;
+    font-family: "Alegreya";
+    color: #a47d5e;
+    text-transform: uppercase;
+    text-align: center; }
+  main .Sandwich .left {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    margin: 2.5% 0 0 10%; }
+    main .Sandwich .left img {
+      margin-top: 15%;
+      margin-left: 35%; }
+    main .Sandwich .left p:nth-child(1) {
+      font-family: Alegreya;
+      font-weight: bold;
+      font-size: 30px;
+      color: #a47d5e;
+      margin-bottom: 2%; }
+    main .Sandwich .left p:nth-child(2) {
+      font-family: Alegreya;
+      font-size: 16px;
+      color: #56534c;
+      text-transform: capitalize;
+      margin: 5%; }
+  main .Sandwich .right {
+    background-image: url("../images/sandwich.png");
+    background-size: cover;
+    position: absolute;
+    width: 50%;
+    height: 65%;
+    margin: 11% 0 0 40%; }
+    main .Sandwich .right div:nth-child(1) {
+      position: absolute; }
+    main .Sandwich .right div:nth-child(2) {
+      position: absolute; }
+  main .Sandwich .prep {
+    background-color: white;
+    opacity: 0.9;
+    background-size: cover;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin: 10% 0 0 79.1%; }
+    main .Sandwich .prep p:nth-child(1) {
+      font-size: 20px;
+      font-family: "Alegreya";
+      color: #a47d5e;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 10%; }
+    main .Sandwich .prep p:nth-child(2) {
+      font-size: 80px;
+      font-family: "Alegreya";
+      color: #56534c;
+      text-transform: uppercase;
+      text-align: center; }
+    main .Sandwich .prep p:nth-child(3) {
+      font-size: 18px;
+      font-family: "Alegreya";
+      color: #a6a297;
+      line-height: 1;
+      text-align: center; }
+  main .Sandwich .cook {
+    background-color: white;
+    opacity: 0.9;
+    background-size: cover;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin: 22% 0 0 79.1%; }
+    main .Sandwich .cook p:nth-child(1) {
+      font-size: 20px;
+      font-family: "Alegreya";
+      color: #a47d5e;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 10%; }
+    main .Sandwich .cook p:nth-child(2) {
+      font-size: 80px;
+      font-family: "Alegreya";
+      color: #56534c;
+      text-transform: uppercase;
+      text-align: center; }
+    main .Sandwich .cook p:nth-child(3) {
+      font-size: 18px;
+      font-family: "Alegreya";
+      color: #a6a297;
+      line-height: 1;
+      text-align: center; }
+  main .Sandwich .kopie {
+    background-image: url("../images/VektorSmartobjekt.png");
+    background-color: white;
+    background-size: cover;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin: 34% 0 0 79.1%; }
+    main .Sandwich .kopie p:nth-child(1) {
+      font-size: 20px;
+      font-family: "Alegreya";
+      color: #a47d5e;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 10%; }
+    main .Sandwich .kopie p:nth-child(2) {
+      font-size: 80px;
+      font-family: "Alegreya";
+      color: #dfc691;
+      text-transform: uppercase;
+      text-align: center; }
+    main .Sandwich .kopie p:nth-child(3) {
+      font-size: 18px;
+      font-family: "Alegreya";
+      color: #a6a297;
+      line-height: 1;
+      text-align: center; }
+  main .Sandwich .FullRecipe {
+    color: #dfc691;
+    margin: 42% 0 0 37%;
+    font-weight: bold;
+    font-family: Alegreya;
+    font-size: 14px;
+    padding: 15px 40px;
+    position: absolute;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 3px;
+    background-color: white;
+    border: 1px solid #dfc691;
+    border-style: dashed; }
+    main .Sandwich .FullRecipe:hover {
+      background-color: white;
+      border-style: solid; }
+  main .Sandwich footer {
+    position: absolute;
+    display: inline-flex;
+    line-height: 30px;
+    background-color: #f3f1e9;
+    height: 7%;
+    width: 100%;
+    margin-top: 55%; }
+    main .Sandwich footer div {
+      color: #35332f;
+      display: inline-flex;
+      justify-content: center;
+      width: 25%;
+      font-family: Scriptina;
+      letter-spacing: 7px;
+      font-size: 30px; }
+      main .Sandwich footer div img {
+        padding: 0 15px;
+        width: 15px; }
+    main .Sandwich footer menu {
+      border-top: 2px solid #c2beba;
+      border-bottom: 1px solid #c2beba;
+      color: #35332f;
+      display: inline-flex;
+      width: 50%;
+      justify-content: space-between;
+      align-items: center;
+      font-family: Alegreya;
+      font-weight: bold;
+      font-style: normal;
+      font-size: 14px;
+      margin: 0 10%; }
+    main .Sandwich footer a {
+      color: #35332f;
+      line-height: 0;
+      text-decoration: none;
+      letter-spacing: 4px; }
+    main .Sandwich footer a:hover {
+      color: #cece43; }
+
+/*# sourceMappingURL=style.css.map */
