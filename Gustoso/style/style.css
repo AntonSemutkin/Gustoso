@@ -38,7 +38,7 @@
   margin: 0; }
 
 ::-webkit-scrollbar {
-  width: 5px; }
+  width: 0.36vw; }
 
 ::-webkit-scrollbar-track {
   background: #564f4c; }
@@ -50,9 +50,9 @@ header {
   z-index: 4;
   position: fixed;
   display: inline-flex;
-  line-height: 30px;
+  line-height: 2.16vw;
   background-color: #56534c;
-  height: 50px;
+  height: 3.6vw;
   width: 100%; }
   header div {
     color: #ffffff;
@@ -60,14 +60,16 @@ header {
     justify-content: center;
     width: 25%;
     font-family: Scriptina;
-    letter-spacing: 7px;
-    font-size: 30px; }
+    letter-spacing: 0.504vw;
+    font-size: 2.16vw;
+    user-select: none; }
     header div img {
-      padding: 0 15px;
-      width: 15px; }
+      padding: 0 1.08vw;
+      width: 1.08vw; }
   header .socials {
     align-items: center; }
   header menu {
+    user-select: none;
     color: #ffffff;
     display: inline-flex;
     width: 50%;
@@ -76,84 +78,89 @@ header {
     font-family: Alegreya;
     font-weight: normal;
     font-style: normal;
-    font-size: 12px; }
+    font-size: 0.864vw; }
   header a {
     color: #ffffff;
     line-height: 0;
     text-decoration: none;
-    letter-spacing: 4px; }
+    letter-spacing: 0.288vw; }
   header a:hover {
     color: #cece43; }
 
 main .pastry {
   color: #ffffff;
-  background: url("../images/hero_img.jpg");
+  background: url("../images/breads.jpg");
   background-size: cover;
+  position: relative;
   height: 100vh; }
   main .pastry .shadow {
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     width: 100%;
     height: 100%;
-    margin: 25% 0 0 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 100%;
+    margin: 0 50%;
+    transform: translate(-50%, 0%);
     background-image: radial-gradient(circle at center, #000000 0%, rgba(0, 0, 0, 0) 60%); }
-  main .pastry div {
+  main .pastry .main-block {
+    z-index: 1;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    margin-top: 50px;
-    width: 100%;
-    height: fit-content;
-    overflow: hidden; }
-    main .pastry div p:nth-child(1) {
+    width: 60%;
+    top: 45%;
+    left: 20%;
+    text-align: center;
+    transform: translate(0%, -50%); }
+    main .pastry .main-block p:nth-child(1) {
       z-index: 2;
-      margin: 9% 0 3% 0;
+      margin: 9% 0 2% 0;
       font-family: Playfair;
-      letter-spacing: 3px;
-      font-size: 92px; }
-    main .pastry div p:nth-child(2) {
+      letter-spacing: 0.216vw;
+      font-size: 6.624vw; }
+    main .pastry .main-block p:nth-child(2) {
       z-index: 2;
-      margin: 3% 0;
+      margin: 3% 0 4% 0;
       text-align: center;
       font-family: Sanchez;
-      letter-spacing: 3px;
-      font-size: 24px; }
-    main .pastry div .ourMenu {
+      letter-spacing: 0.216vw;
+      font-size: 1.728vw; }
+    main .pastry .main-block .menu-button {
       color: #ffffff;
       z-index: 2;
       margin: 3% 0;
       font-family: Sanchez;
-      font-size: 14px;
-      padding: 15px 40px;
+      font-size: 1.008vw;
+      padding: 1.08vw 2.88vw;
       text-decoration: none;
-      letter-spacing: 3px;
+      letter-spacing: 0.216vw;
       background-color: rgba(86, 83, 76, 0.7);
-      border: 1px solid rgba(201, 201, 201, 0.9);
+      border: 0.072vw solid rgba(201, 201, 201, 0.9);
       border-style: dashed; }
-      main .pastry div .ourMenu:hover {
+      main .pastry .main-block .menu-button:hover {
         background-color: #56534c;
         border-style: solid; }
-  main .pastry .bulka {
+  main .pastry .img-separator {
+    background-image: url("../images/bread.svg");
     position: absolute;
     z-index: 3;
-    width: 50px;
-    bottom: -50px;
+    width: 3.6vw;
+    height: 3.6vw;
+    bottom: -3.6vw;
     left: 50%;
-    margin-right: -50%;
     transform: translate(-50%, -50%); }
 main .artOfCakes {
   background-image: url("../images/artOfCake_img.jpg");
   background-size: cover;
-  height: 93vh; }
+  height: auto;
+  padding: 3.6vw 0 4.32vw 0;
+  display: inline-flex; }
   main .artOfCakes .leftcontent {
-    position: absolute;
-    width: 47%;
-    height: 80%;
-    margin: 3% 0 0 4%; }
+    position: relative;
+    width: 94%;
+    height: inherit;
+    margin: 0 0 0 3%; }
     main .artOfCakes .leftcontent div:nth-child(1) {
       text-align: center;
       width: 85%;
@@ -161,22 +168,22 @@ main .artOfCakes {
       main .artOfCakes .leftcontent div:nth-child(1) p:nth-child(1) {
         font-family: Alegreya;
         font-weight: bold;
-        font-size: 52px;
+        font-size: 3.744vw;
         color: #56534c; }
       main .artOfCakes .leftcontent div:nth-child(1) p:nth-child(2) {
         font-family: Alegreya;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 1.152vw;
         color: #a47d5e;
-        letter-spacing: 1px;
+        letter-spacing: 0.072vw;
         margin-bottom: 10%; }
       main .artOfCakes .leftcontent div:nth-child(1) p:nth-child(3) {
         font-family: Montserrat;
         font-weight: 600;
-        font-size: 14px;
-        letter-spacing: 1px;
+        font-size: 1.008vw;
+        letter-spacing: 0.072vw;
         color: #56534c;
-        line-height: 1.75em; }
+        line-height: 1.512vw; }
     main .artOfCakes .leftcontent div:nth-child(2) {
       text-align: center;
       width: 90%;
@@ -185,7 +192,7 @@ main .artOfCakes {
       main .artOfCakes .leftcontent div:nth-child(2) p:nth-child(1) {
         font-family: Alegreya;
         font-weight: bold;
-        font-size: 24px;
+        font-size: 2.52vw;
         color: #56534c; }
       main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(2) {
         margin-left: 0;
@@ -194,371 +201,876 @@ main .artOfCakes {
         align-items: center;
         justify-content: center; }
         main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(2) p:nth-child(1), main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(2) p:nth-child(3) {
-          width: 120px;
-          margin: 0 5px;
+          width: 8.64vw;
+          margin: 0 0.36vw;
           padding: 2% 5%;
-          border-top: 1px solid black;
-          border-bottom: 1px solid black;
+          border-top: 0.072vw solid #000000;
+          border-bottom: 0.072vw solid #000000;
           color: #56534c;
           font-family: Alegreya;
           font-weight: normal;
-          font-size: 24px; }
+          font-size: 1.728vw; }
         main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(2) img {
-          width: 120px;
-          box-shadow: 0 0 10px 1px black;
+          width: 8.64vw;
           border-radius: 100%; }
-      main .artOfCakes .leftcontent div:nth-child(2) p:nth-child(3) {
+      main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(3) {
+        display: inline-flex;
+        justify-content: space-around;
         font-family: Scriptina;
         font-weight: bold;
-        font-size: 32px;
-        color: #a47d5e; }
+        font-size: 2.304vw;
+        color: #a47d5e;
+        user-select: none; }
+        main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(3) span {
+          padding: 0 1.44vw;
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 5.184vw;
+          color: rgba(86, 83, 76, 0.5); }
+        main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(3) p {
+          line-height: 5.76vw; }
   main .artOfCakes .rightcontent {
-    position: absolute;
-    width: 47%;
-    height: 80%;
-    margin: 3% 0 0 48%; }
+    position: relative;
+    width: 94%;
+    height: inherit;
+    margin: 0 0 0 3%; }
     main .artOfCakes .rightcontent .img-top-left {
-      position: absolute;
-      background-image: url("../images/top_left.jpg");
+      display: inline-flex;
+      margin: 1%;
+      background-image: url("../images/flour.jpg");
       background-size: cover;
-      width: 40%;
-      height: 40%;
-      margin: 5.5% 0 0 9.5%;
+      width: 19.8vw;
+      height: 17.64vw;
       outline: 3px solid white;
-      outline-offset: -8px; }
+      outline-offset: -0.72vw; }
     main .artOfCakes .rightcontent .img-top-right {
-      position: absolute;
-      background-image: url("../images/top_right.jpg");
+      display: inline-flex;
+      margin: 1%;
+      background-image: url("../images/Ingredients.jpg");
       background-size: cover;
-      width: 40%;
-      height: 40%;
-      margin: 5.5% 0 0 52.5%;
+      width: 19.8vw;
+      height: 17.64vw;
       outline: 3px solid white;
-      outline-offset: -8px; }
+      outline-offset: -0.72vw; }
     main .artOfCakes .rightcontent .img-bottom-right {
-      position: absolute;
-      background-image: url("../images/bottom_right.jpg");
+      display: inline-flex;
+      margin: 1%;
+      background-image: url("../images/cake.jpg");
       background-size: cover;
-      width: 40%;
-      height: 40%;
-      margin: 43.5% 0 0 52.5%;
+      width: 19.8vw;
+      height: 17.64vw;
       outline: 3px solid white;
-      outline-offset: -8px; }
+      outline-offset: -0.72vw; }
     main .artOfCakes .rightcontent .img-bottom-left {
-      position: absolute;
-      background-image: url("../images/bottom_left.jpg");
+      display: inline-flex;
+      margin: 1%;
+      background-image: url("../images/strawberry_cake.jpg");
       background-size: cover;
-      width: 40%;
-      height: 40%;
-      margin: 43.5% 0 0 9.5%;
+      width: 19.8vw;
+      height: 17.64vw;
       outline: 3px solid white;
-      outline-offset: -8px; }
+      outline-offset: -0.72vw; }
     main .artOfCakes .rightcontent .img-center {
       position: absolute;
-      background-image: url("../images/AOC_center.svg");
+      background-image: url("../images/AOC_center.png");
       background-size: cover;
-      top: 48%;
-      left: 51%;
-      transform: translate(-50%, -50%);
-      width: 35%;
-      height: 40.25%; }
+      width: 19.8vw;
+      height: 19.8vw;
+      transform: translate(50%, 50%);
+      right: 55.5%;
+      top: 0;
+      user-select: none; }
       main .artOfCakes .rightcontent .img-center p {
         font-family: Alegreya;
         color: #c9b176;
         text-align: center;
-        font-size: 30px;
-        margin-top: 32.5%; }
-main .foodwidget {
-  background-image: url("../images/placeholder.png");
-  background-size: cover;
-  height: 93vh; }
-  main .foodwidget .container {
-    display: flex;
-    width: 1260px;
-    margin: 0 auto; }
-    main .foodwidget .container .foodcontainer {
-      background-color: white;
-      background: linear-gradient(45deg, transparent 50px, white 0) right;
-      margin-left: 94px;
-      margin-top: 140px;
-      margin-bottom: 108px;
-      width: 965px;
-      height: 512px;
-      display: flex; }
-      main .foodwidget .container .foodcontainer .rightc {
-        background-image: url("../images/windmill.png");
-        background-position: bottom right;
-        background-repeat: no-repeat;
-        width: 545px;
-        height: 512px; }
-        main .foodwidget .container .foodcontainer .rightc .circle {
-          height: 50px;
-          width: 50px;
-          border-radius: 50%;
-          background-color: white;
-          margin-left: -25px;
-          margin-top: -45px; }
-        main .foodwidget .container .foodcontainer .rightc .text1 {
-          margin-top: 80px;
-          margin-left: 65px;
-          font-size: 48px;
-          letter-spacing: 1px;
-          line-height: 30px;
-          color: #56534c;
-          font-weight: 700;
-          font-family: "Alegreya";
-          height: 65px; }
-          main .foodwidget .container .foodcontainer .rightc .text1 p {
-            margin: 0; }
-          main .foodwidget .container .foodcontainer .rightc .text1 .p1 {
-            font-size: 14px;
-            letter-spacing: 1px;
-            line-height: 30px;
-            color: #a47d5e;
-            font-weight: 700;
-            font-family: "Proxima Nova";
-            margin-top: 14px; }
-        main .foodwidget .container .foodcontainer .rightc .text2 {
-          margin-top: 70px;
-          margin-left: 65px;
-          font-size: 14px;
-          letter-spacing: 1px;
-          line-height: 20px;
-          color: #56534c;
-          font-family: "Proxima Nova"; }
-          main .foodwidget .container .foodcontainer .rightc .text2 p {
-            margin: 0; }
-        main .foodwidget .container .foodcontainer .rightc .rating {
-          margin-top: 50px;
-          margin-left: 65px; }
-          main .foodwidget .container .foodcontainer .rightc .rating .stars {
-            display: flex;
-            list-style-type: none;
-            padding: 0;
-            margin: 0; }
-            main .foodwidget .container .foodcontainer .rightc .rating .stars li {
-              margin-right: 10px; }
-        main .foodwidget .container .foodcontainer .rightc .slide {
-          margin-top: 37px;
-          margin-left: 65px; }
-          main .foodwidget .container .foodcontainer .rightc .slide .slidee {
-            display: flex;
-            list-style-type: none;
-            align-items: center;
-            padding: 0; }
-            main .foodwidget .container .foodcontainer .rightc .slide .slidee .img {
-              margin-left: 14px;
-              margin-right: 14px; }
-    main .foodwidget .container .kopie {
-      background-image: url("../images/VektorSmartobjekt.png");
-      background-color: white;
-      background-size: cover;
+        font-size: 2.52vw;
+        height: 100%;
+        transform: translate(0%, 30%); }
+main .tastyPancakes {
+  color: #ffffff;
+  background: url("../images/tastyPancakes_img.jpg");
+  background-size: 100%;
+  background-position: left bottom;
+  position: relative;
+  padding: 9vw 0 5.4vw 0; }
+  main .tastyPancakes .pancakeCard {
+    transform: translate(50%, 0);
+    right: 14.4vw;
+    position: relative;
+    width: 64.8vw;
+    height: 32.76vw;
+    box-shadow: 0 0 2.16vw 0.288vw rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 0 5.76vw; }
+    main .tastyPancakes .pancakeCard .pancakeImage {
+      clip-path: polygon(100% 0, 100% 100%, 10% 100%, 0 92%, 0 0);
       position: absolute;
-      width: 200px;
-      height: 200px;
-      margin: 6% 0 0 50%; }
-      main .foodwidget .container .kopie p:nth-child(1) {
-        font-size: 20px;
-        font-family: "Alegreya";
-        color: #a47d5e;
-        text-transform: uppercase;
-        text-align: center;
-        margin-top: 10%; }
-      main .foodwidget .container .kopie p:nth-child(2) {
-        font-size: 80px;
-        font-family: "Alegreya";
-        color: #dfc691;
-        text-transform: uppercase;
-        text-align: center; }
-      main .foodwidget .container .kopie p:nth-child(3) {
-        font-size: 18px;
-        font-family: "Alegreya";
-        color: #a6a297;
-        line-height: 1;
-        text-align: center; }
-main .Sandwich {
-  background-color: #f3f1e9;
-  background-size: cover;
-  height: 130vh; }
-  main .Sandwich p:nth-child(1) {
-    font-size: 48px;
-    font-family: "Alegreya";
+      background: url("../images/pancake.jpg");
+      background-size: cover;
+      background-position-x: 60%;
+      width: 40%;
+      height: 100%; }
+      main .tastyPancakes .pancakeCard .pancakeImage .circle {
+        position: absolute;
+        width: 4.32vw;
+        height: 4.32vw;
+        border-radius: 100%;
+        background-color: #ffffff;
+        transform: translate(50%, 50%);
+        right: 0;
+        bottom: 50%;
+        box-shadow: 0 0 0.72vw 0.072vw rgba(0, 0, 0, 0.5); }
+    main .tastyPancakes .pancakeCard .pancakeInfo {
+      position: absolute;
+      background-color: #ffffff;
+      background-image: url("../images/mill.png");
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      width: 60%;
+      height: 100%;
+      right: 0; }
+      main .tastyPancakes .pancakeCard .pancakeInfo div {
+        font-family: Alegreya;
+        font-weight: bold; }
+        main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(1) {
+          padding: 2.88vw 0 0 2.52vw;
+          color: #56534c;
+          font-size: 3.456vw; }
+        main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(2) {
+          padding-left: 2.52vw;
+          color: #a47d5e;
+          font-size: 1.152vw;
+          letter-spacing: 0.072vw; }
+        main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(3) {
+          font-family: Montserrat;
+          font-weight: 600;
+          font-size: 0.864vw;
+          color: #56534c;
+          padding: 2.88vw 2.52vw 5% 2.52vw;
+          letter-spacing: 0.108vw;
+          line-height: 1.5vw; }
+        main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(4) {
+          padding-left: 7%;
+          user-select: none; }
+          main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(4) img {
+            padding-right: 1%;
+            width: 1.44vw;
+            height: 1.44vw; }
+        main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(5) {
+          padding: 1.8vw 2.52vw 0vw 0vw;
+          width: 100%;
+          height: fit-content;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center; }
+          main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(5) button {
+            background-color: transparent;
+            margin: 0 0.36vw;
+            border: 0;
+            box-shadow: 0 0 0 0.144vw #5a5750;
+            width: 2.52vw;
+            height: 2.52vw;
+            border-radius: 100%; }
+          main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(5) .arrow {
+            border: solid #5a5750;
+            border-width: 0 0.18vw 0.18vw 0;
+            display: inline-block;
+            padding: 0.252vw; }
+          main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(5) .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg); }
+          main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(5) .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg); }
+          main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(5) button:hover {
+            box-shadow: 0 0 0 0.144vw #000000;
+            background-color: #d9bda5;
+            cursor: pointer; }
+          main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(5) a {
+            margin: 0 2.5%; }
+            main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(5) a img {
+              box-shadow: 0 0.36vw 0.72vw 0.072vw rgba(0, 0, 0, 0.9);
+              border-radius: 100%;
+              width: 6.48vw;
+              height: 6.48vw;
+              background-size: cover; }
+  main .tastyPancakes .readyTime {
+    background-color: rgba(255, 255, 255, 0.9);
+    background-image: url("../images/field.png");
+    position: absolute;
+    width: 12.24vw;
+    height: 12.24vw;
+    right: -1.08vw;
+    top: -1.08vw;
+    margin-top: 0;
+    user-select: none;
+    background-color: transparent;
+    background-size: cover;
+    box-shadow: -1vw 3vh 2.16vw 0.072vw rgba(0, 0, 0, 0.25);
+    right: 12.6vw;
+    top: 3.6vw; }
+    main .tastyPancakes .readyTime p {
+      color: #a47d5e;
+      font-family: Alegreya;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 0.072vw; }
+      main .tastyPancakes .readyTime p:nth-child(1) {
+        padding-top: 1.44vw;
+        font-size: 1.152vw;
+        width: 100%;
+        height: auto; }
+      main .tastyPancakes .readyTime p:nth-child(2) {
+        position: absolute;
+        font-size: 5.184vw;
+        width: 100%;
+        top: 2.16vw;
+        height: 40%;
+        color: #56534c; }
+      main .tastyPancakes .readyTime p:nth-child(3) {
+        position: absolute;
+        font-size: 1.152vw;
+        padding-bottom: 0.36vw;
+        width: 100%;
+        height: 20%;
+        bottom: 0.72vw;
+        color: #979285; }
+main .sandwichName {
+  width: 100%;
+  height: 7.2vw;
+  padding-top: 0.72vw;
+  text-align: center;
+  font-family: Alegreya;
+  font-weight: bold; }
+  main .sandwichName p:nth-child(1) {
+    font-size: 3.744vw;
     color: #56534c;
-    text-align: center; }
-  main .Sandwich p:nth-child(2) {
-    font-weight: 500;
-    font-size: 12px;
-    font-family: "Alegreya";
-    color: #a47d5e;
-    text-transform: uppercase;
-    text-align: center; }
-  main .Sandwich .left {
-    position: absolute;
-    width: 20%;
-    height: 100%;
-    margin: 2.5% 0 0 10%; }
-    main .Sandwich .left img {
-      margin-top: 15%;
-      margin-left: 35%; }
-    main .Sandwich .left p:nth-child(1) {
-      font-family: Alegreya;
-      font-weight: bold;
-      font-size: 30px;
-      color: #a47d5e;
-      margin-bottom: 2%; }
-    main .Sandwich .left p:nth-child(2) {
-      font-family: Alegreya;
-      font-size: 16px;
-      color: #56534c;
-      text-transform: capitalize;
-      margin: 5%; }
-  main .Sandwich .right {
-    background-image: url("../images/sandwich.png");
-    background-size: cover;
-    position: absolute;
-    width: 50%;
-    height: 65%;
-    margin: 11% 0 0 40%; }
-    main .Sandwich .right div:nth-child(1) {
-      position: absolute; }
-    main .Sandwich .right div:nth-child(2) {
-      position: absolute; }
-  main .Sandwich .prep {
-    background-color: white;
-    opacity: 0.9;
-    background-size: cover;
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    margin: 10% 0 0 79.1%; }
-    main .Sandwich .prep p:nth-child(1) {
-      font-size: 20px;
-      font-family: "Alegreya";
-      color: #a47d5e;
-      text-transform: uppercase;
-      text-align: center;
-      margin-top: 10%; }
-    main .Sandwich .prep p:nth-child(2) {
-      font-size: 80px;
-      font-family: "Alegreya";
-      color: #56534c;
-      text-transform: uppercase;
-      text-align: center; }
-    main .Sandwich .prep p:nth-child(3) {
-      font-size: 18px;
-      font-family: "Alegreya";
-      color: #a6a297;
-      line-height: 1;
-      text-align: center; }
-  main .Sandwich .cook {
-    background-color: white;
-    opacity: 0.9;
-    background-size: cover;
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    margin: 22% 0 0 79.1%; }
-    main .Sandwich .cook p:nth-child(1) {
-      font-size: 20px;
-      font-family: "Alegreya";
-      color: #a47d5e;
-      text-transform: uppercase;
-      text-align: center;
-      margin-top: 10%; }
-    main .Sandwich .cook p:nth-child(2) {
-      font-size: 80px;
-      font-family: "Alegreya";
-      color: #56534c;
-      text-transform: uppercase;
-      text-align: center; }
-    main .Sandwich .cook p:nth-child(3) {
-      font-size: 18px;
-      font-family: "Alegreya";
-      color: #a6a297;
-      line-height: 1;
-      text-align: center; }
-  main .Sandwich .kopie {
-    background-image: url("../images/VektorSmartobjekt.png");
-    background-color: white;
-    background-size: cover;
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    margin: 34% 0 0 79.1%; }
-    main .Sandwich .kopie p:nth-child(1) {
-      font-size: 20px;
-      font-family: "Alegreya";
-      color: #a47d5e;
-      text-transform: uppercase;
-      text-align: center;
-      margin-top: 10%; }
-    main .Sandwich .kopie p:nth-child(2) {
-      font-size: 80px;
-      font-family: "Alegreya";
-      color: #dfc691;
-      text-transform: uppercase;
-      text-align: center; }
-    main .Sandwich .kopie p:nth-child(3) {
-      font-size: 18px;
-      font-family: "Alegreya";
-      color: #a6a297;
-      line-height: 1;
-      text-align: center; }
-  main .Sandwich .FullRecipe {
-    color: #dfc691;
-    margin: 42% 0 0 37%;
-    font-weight: bold;
-    font-family: Alegreya;
-    font-size: 14px;
-    padding: 15px 40px;
-    position: absolute;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 3px;
-    background-color: white;
-    border: 1px solid #dfc691;
-    border-style: dashed; }
-    main .Sandwich .FullRecipe:hover {
-      background-color: white;
-      border-style: solid; }
-  main .Sandwich footer {
-    position: absolute;
-    display: inline-flex;
-    line-height: 30px;
-    background-color: #f3f1e9;
-    height: 7%;
-    width: 100%;
-    margin-top: 55%; }
-    main .Sandwich footer div {
-      color: #35332f;
-      display: inline-flex;
-      justify-content: center;
-      width: 25%;
-      font-family: Scriptina;
-      letter-spacing: 7px;
-      font-size: 30px; }
-      main .Sandwich footer div img {
-        padding: 0 15px;
-        width: 15px; }
-    main .Sandwich footer menu {
-      border-top: 2px solid #c2beba;
-      border-bottom: 1px solid #c2beba;
-      color: #35332f;
-      display: inline-flex;
-      width: 50%;
-      justify-content: space-between;
+    letter-spacing: 0.072vw; }
+  main .sandwichName p:nth-child(2) {
+    font-size: 1.152vw;
+    color: #a47d5e; }
+main .sandwich {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: inline-flex; }
+  main .sandwich .ingridients {
+    width: 25%;
+    height: auto;
+    padding: 3% 0 0 4%; }
+    main .sandwich .ingridients div {
+      padding: 0 0.72vw;
+      margin-bottom: 2.16vw; }
+      main .sandwich .ingridients div img {
+        margin-left: 50%;
+        transform: translate(-50%, 0%);
+        width: 6.48vw;
+        height: 6.48vw;
+        border-radius: 100%;
+        box-shadow: 0 0.36vw 0.72vw 0.072vw rgba(0, 0, 0, 0.3);
+        margin-bottom: 0.36vw; }
+      main .sandwich .ingridients div p {
+        text-align: center; }
+        main .sandwich .ingridients div p:nth-child(2) {
+          font-family: Alegreya;
+          font-weight: bold;
+          color: #a47d5e;
+          font-size: 2.304vw;
+          letter-spacing: 0.072vw;
+          margin-bottom: 0.72vw; }
+        main .sandwich .ingridients div p:nth-child(3) {
+          font-family: Montserrat;
+          font-weight: 600;
+          color: #56534c;
+          font-size: 1.008vw;
+          letter-spacing: 0.072vw; }
+  main .sandwich .sandwichImage {
+    width: 63%;
+    height: auto;
+    margin: 0 0 0 3%;
+    padding: 3% 3% 0 3%; }
+    main .sandwich .sandwichImage .main_image {
+      position: relative;
+      display: flex;
       align-items: center;
+      margin: 7% 3% 10% 3%;
+      border: 0.504vw solid #ffffff;
+      height: 75%;
+      background-image: url("../images/jibarito_sandwich.jpg");
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 0.36vw 1.44vw 0.72vw rgba(0, 0, 0, 0.25); }
+      main .sandwich .sandwichImage .main_image div {
+        display: inline-flex;
+        flex-direction: column; }
+        main .sandwich .sandwichImage .main_image div:nth-child(1) {
+          background-color: rgba(255, 255, 255, 0.9);
+          background-image: url("none");
+          position: absolute;
+          width: 12.24vw;
+          height: 12.24vw;
+          right: -1.08vw;
+          top: -1.08vw;
+          margin-top: 0;
+          user-select: none; }
+          main .sandwich .sandwichImage .main_image div:nth-child(1) p {
+            color: #a47d5e;
+            font-family: Alegreya;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 0.072vw; }
+            main .sandwich .sandwichImage .main_image div:nth-child(1) p:nth-child(1) {
+              padding-top: 1.44vw;
+              font-size: 1.152vw;
+              width: 100%;
+              height: auto; }
+            main .sandwich .sandwichImage .main_image div:nth-child(1) p:nth-child(2) {
+              position: absolute;
+              font-size: 5.184vw;
+              width: 100%;
+              top: 2.16vw;
+              height: 40%;
+              color: #56534c; }
+            main .sandwich .sandwichImage .main_image div:nth-child(1) p:nth-child(3) {
+              position: absolute;
+              font-size: 1.152vw;
+              padding-bottom: 0.36vw;
+              width: 100%;
+              height: 20%;
+              bottom: 0.72vw;
+              color: #979285; }
+        main .sandwich .sandwichImage .main_image div:nth-child(2) {
+          background-color: rgba(255, 255, 255, 0.9);
+          background-image: url("none");
+          position: absolute;
+          width: 12.24vw;
+          height: 12.24vw;
+          right: -1.08vw;
+          top: -1.08vw;
+          margin-top: 12.384vw;
+          user-select: none; }
+          main .sandwich .sandwichImage .main_image div:nth-child(2) p {
+            color: #a47d5e;
+            font-family: Alegreya;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 0.072vw; }
+            main .sandwich .sandwichImage .main_image div:nth-child(2) p:nth-child(1) {
+              padding-top: 1.44vw;
+              font-size: 1.152vw;
+              width: 100%;
+              height: auto; }
+            main .sandwich .sandwichImage .main_image div:nth-child(2) p:nth-child(2) {
+              position: absolute;
+              font-size: 5.184vw;
+              width: 100%;
+              top: 2.16vw;
+              height: 40%;
+              color: #56534c; }
+            main .sandwich .sandwichImage .main_image div:nth-child(2) p:nth-child(3) {
+              position: absolute;
+              font-size: 1.152vw;
+              padding-bottom: 0.36vw;
+              width: 100%;
+              height: 20%;
+              bottom: 0.72vw;
+              color: #979285; }
+        main .sandwich .sandwichImage .main_image div:nth-child(3) {
+          background-color: rgba(255, 255, 255, 0.9);
+          background-image: url("../images/field.png");
+          position: absolute;
+          width: 12.24vw;
+          height: 12.24vw;
+          right: -1.08vw;
+          top: -1.08vw;
+          margin-top: 24.768vw;
+          user-select: none;
+          background-size: cover; }
+          main .sandwich .sandwichImage .main_image div:nth-child(3) p {
+            color: #a47d5e;
+            font-family: Alegreya;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 0.072vw; }
+            main .sandwich .sandwichImage .main_image div:nth-child(3) p:nth-child(1) {
+              padding-top: 1.44vw;
+              font-size: 1.152vw;
+              width: 100%;
+              height: auto; }
+            main .sandwich .sandwichImage .main_image div:nth-child(3) p:nth-child(2) {
+              position: absolute;
+              font-size: 6.48vw;
+              width: 100%;
+              top: 2.16vw;
+              height: 40%;
+              color: #a47d5e; }
+            main .sandwich .sandwichImage .main_image div:nth-child(3) p:nth-child(3) {
+              position: absolute;
+              font-size: 1.152vw;
+              padding-bottom: 0.36vw;
+              width: 100%;
+              height: 20%;
+              bottom: 0;
+              color: #979285; }
+    main .sandwich .sandwichImage a {
+      position: absolute;
+      color: #f2c76c;
       font-family: Alegreya;
-      font-weight: bold;
-      font-style: normal;
-      font-size: 14px;
-      margin: 0 10%; }
-    main .Sandwich footer a {
-      color: #35332f;
-      line-height: 0;
+      font-weight: normal;
+      font-size: 1.296vw;
+      padding: 1.08vw 2.88vw;
       text-decoration: none;
-      letter-spacing: 4px; }
-    main .Sandwich footer a:hover {
+      letter-spacing: 0.144vw;
+      background-color: #ffffff;
+      border: 0.144vw solid #f2c76c;
+      border-style: dashed;
+      bottom: 4.5vw; }
+      main .sandwich .sandwichImage a:hover {
+        background-color: #f2c76c;
+        border-style: solid;
+        color: #ffffff;
+        cursor: pointer; }
+
+footer {
+  width: 90%;
+  height: 4.32vw;
+  margin: 2% 5% 2% 5%;
+  color: #000;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.008vw;
+  user-select: none; }
+  footer a {
+    font-family: Alegreya;
+    font-weight: normal;
+    font-style: normal;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 0.288vw; }
+    footer a:hover {
       color: #cece43; }
+  footer div:nth-child(1), footer div:nth-child(3) {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-top: 0.072vw solid #c2beba;
+    border-bottom: 0.072vw solid #c2beba; }
+  footer div:nth-child(2) {
+    margin: 0 3% 1.44vw 3%;
+    display: inline-flex;
+    justify-content: center;
+    width: 20%;
+    font-family: Scriptina;
+    letter-spacing: 0.504vw;
+    font-size: 2.592vw; }
+
+@media (orientation: portrait) and (min-resolution: 72dpi) {
+  ::-webkit-scrollbar {
+    width: 0; }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    line-height: 5.4vw;
+    height: 14.04vw;
+    width: 100%; }
+    header div {
+      width: 100%;
+      justify-content: center;
+      font-size: 4.68vw;
+      user-select: none; }
+    header .socials {
+      width: 100%;
+      justify-content: left;
+      font-size: 4.68vw;
+      user-select: none; }
+    header menu {
+      width: 100%;
+      justify-content: space-around;
+      margin: 2.52vw 0 0 0;
+      font-size: 2.52vw; }
+    header a:hover, header a:focus {
+      color: #cece43; }
+
+  main .pastry {
+    background-size: cover;
+    padding: 0 0 0 3%; }
+    main .pastry .shadow {
+      margin: 0 0 0 47%;
+      width: 100%;
+      background-image: radial-gradient(circle at center, #000000 0%, rgba(0, 0, 0, 0) 60%); }
+    main .pastry .main-block {
+      width: 98%;
+      margin-left: 2%;
+      top: 50%;
+      left: 0; }
+      main .pastry .main-block p:nth-child(1) {
+        margin: 0;
+        font-size: 12.096vw; }
+      main .pastry .main-block p:nth-child(2) {
+        margin: 10% 5%;
+        font-size: 5.184vw; }
+      main .pastry .main-block .menu-button {
+        font-size: 4.032vw;
+        padding: 4.32vw 11.52vw; }
+    main .pastry .img-separator {
+      width: 10.8vw;
+      height: 10.8vw;
+      bottom: -10.8vw;
+      left: 52.5%; }
+  main .artOfCakes {
+    padding: 3.6vw 0 4.32vw 2.5%;
+    display: block; }
+    main .artOfCakes .leftcontent {
+      margin: 0 3% 0 2.5%; }
+      main .artOfCakes .leftcontent div:nth-child(1) p:nth-child(1) {
+        font-size: 12.6vw; }
+      main .artOfCakes .leftcontent div:nth-child(1) p:nth-child(2) {
+        font-size: 3.456vw; }
+      main .artOfCakes .leftcontent div:nth-child(1) p:nth-child(3) {
+        font-size: 3.024vw;
+        line-height: 4.536vw; }
+      main .artOfCakes .leftcontent div:nth-child(2) p:nth-child(1) {
+        font-size: 7.56vw; }
+      main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(2) p:nth-child(1), main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(2) p:nth-child(3) {
+        width: 14.4vw;
+        padding: 3% 8%;
+        font-size: 5.184vw; }
+      main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(2) img {
+        width: 25.92vw; }
+      main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(3) {
+        font-size: 6.048vw;
+        padding: 3.6vw 0 0 0; }
+        main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(3) span {
+          font-size: 13.824vw; }
+        main .artOfCakes .leftcontent div:nth-child(2) div:nth-child(3) p {
+          line-height: 7.2vw; }
+    main .artOfCakes .rightcontent {
+      width: 83%;
+      margin: 7.2vw 0 0 7.75%; }
+      main .artOfCakes .rightcontent .img-top-left {
+        display: inline-flex;
+        margin: 1%;
+        background-image: url("../images/top_left.jpg");
+        background-size: cover;
+        width: 38.412vw;
+        height: 35.28vw;
+        outline: 3px solid white;
+        outline-offset: -1.44vw; }
+      main .artOfCakes .rightcontent .img-top-right {
+        display: inline-flex;
+        margin: 1%;
+        background-image: url("../images/top_right.jpg");
+        background-size: cover;
+        width: 38.412vw;
+        height: 35.28vw;
+        outline: 3px solid white;
+        outline-offset: -1.44vw; }
+      main .artOfCakes .rightcontent .img-bottom-right {
+        display: inline-flex;
+        margin: 1%;
+        background-image: url("../images/bottom_right.jpg");
+        background-size: cover;
+        width: 38.412vw;
+        height: 35.28vw;
+        outline: 3px solid white;
+        outline-offset: -1.44vw; }
+      main .artOfCakes .rightcontent .img-bottom-left {
+        display: inline-flex;
+        margin: 1%;
+        background-image: url("../images/bottom_left.jpg");
+        background-size: cover;
+        width: 38.412vw;
+        height: 35.28vw;
+        outline: 3px solid white;
+        outline-offset: -1.44vw; }
+      main .artOfCakes .rightcontent .img-center {
+        width: 34.65vw;
+        height: 34.65vw;
+        right: 50%;
+        top: 5%; }
+        main .artOfCakes .rightcontent .img-center p {
+          font-size: 4.41vw; }
+  main .tastyPancakes {
+    background-size: cover;
+    padding: 18vw 0 10.8vw 0;
+    position: relative; }
+    main .tastyPancakes .pancakeCard {
+      right: 36vw;
+      width: 86.4vw;
+      height: 99vw;
+      border-radius: 14.4vw 0 0 0;
+      box-shadow: 0 0 7.2vw 0.288vw black; }
+      main .tastyPancakes .pancakeCard .pancakeImage {
+        clip-path: none;
+        background: url("../images/pancake.jpg");
+        background-size: 100%;
+        background-position-x: 60%;
+        background-position-y: 30%;
+        width: 100%;
+        height: 28.8vw;
+        border-radius: 14.4vw 0 0 0; }
+        main .tastyPancakes .pancakeCard .pancakeImage .circle {
+          position: absolute;
+          width: 10.8vw;
+          height: 10.8vw;
+          border-radius: 100%;
+          background-color: #ffffff;
+          transform: translate(50%, 50%);
+          right: 50%;
+          bottom: 0;
+          box-shadow: 0 0 0.72vw 0.072vw rgba(0, 0, 0, 0.5); }
+      main .tastyPancakes .pancakeCard .pancakeInfo {
+        width: 100%;
+        height: 70.2vw;
+        margin-top: 28.8vw;
+        right: 0; }
+        main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(1) {
+          padding: 5.4vw 0 1.08vw 5.4vw;
+          font-size: 8.64vw; }
+        main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(2) {
+          padding-left: 5.4vw;
+          font-size: 3.456vw;
+          letter-spacing: 0.072vw; }
+        main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(3) {
+          font-size: 2.592vw;
+          padding: 2.88vw 5.4vw;
+          line-height: 3.6vw; }
+        main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(4) {
+          padding-left: 5.4vw; }
+          main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(4) img {
+            padding-right: 0.72vw;
+            width: 4.32vw;
+            height: 4.32vw; }
+        main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(5) {
+          padding: 3.6vw 2.52vw 0vw 0vw;
+          width: 100%; }
+          main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(5) button {
+            box-shadow: 0 0 0 0.36vw #5a5750;
+            width: 6.3vw;
+            height: 6.3vw; }
+          main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(5) .arrow {
+            border: solid #000000;
+            border-width: 0 0.216vw 0.216vw 0;
+            padding: 0.72vw; }
+          main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(5) button:hover {
+            box-shadow: 0 0 0 0.36vw #000000;
+            background-color: white; }
+          main .tastyPancakes .pancakeCard .pancakeInfo div:nth-child(5) a img {
+            box-shadow: 0 0.72vw 1.8vw 0.072vw black;
+            width: 16.2vw;
+            height: 16.2vw; }
+    main .tastyPancakes .readyTime {
+      background-color: rgba(255, 255, 255, 0.9);
+      background-image: url("../images/readyTime_img.png");
+      position: absolute;
+      width: 22.032vw;
+      height: 22.032vw;
+      right: -1.08vw;
+      top: -1.08vw;
+      margin-top: 0;
+      user-select: none;
+      box-shadow: -1vw 2vh 4.32vw 0.072vw rgba(0, 0, 0, 0.75);
+      right: 9vw;
+      top: 3.6vw; }
+      main .tastyPancakes .readyTime p {
+        color: #a47d5e;
+        font-family: Alegreya;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: 0.072vw; }
+        main .tastyPancakes .readyTime p:nth-child(1) {
+          padding-top: 1.44vw;
+          font-size: 2.88vw;
+          width: 100%;
+          height: auto; }
+        main .tastyPancakes .readyTime p:nth-child(2) {
+          position: absolute;
+          font-size: 11.664vw;
+          width: 100%;
+          top: 2.16vw;
+          height: 40%;
+          color: #56534c; }
+        main .tastyPancakes .readyTime p:nth-child(3) {
+          position: absolute;
+          font-size: 2.88vw;
+          padding-bottom: 0.36vw;
+          width: 100%;
+          height: 20%;
+          bottom: 0.72vw;
+          color: #979285; }
+  main .sandwichName {
+    height: 18vw;
+    padding: 2.16vw 0 7.56vw 0; }
+    main .sandwichName p:nth-child(1) {
+      font-size: 9.36vw; }
+    main .sandwichName p:nth-child(2) {
+      font-size: 2.88vw; }
+  main .sandwich {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column; }
+    main .sandwich .ingridients {
+      display: inline-flex;
+      flex-direction: row;
+      width: 100%;
+      padding: 0 0 3.6vw 0; }
+      main .sandwich .ingridients div {
+        padding: 0; }
+        main .sandwich .ingridients div img {
+          width: 18vw;
+          height: 18vw;
+          margin-bottom: 1.8vw; }
+        main .sandwich .ingridients div p:nth-child(2) {
+          font-size: 4.608vw;
+          margin-bottom: 2.16vw; }
+        main .sandwich .ingridients div p:nth-child(3) {
+          padding: 0 1.8vw;
+          font-size: 2.52vw; }
+    main .sandwich .sandwichImage {
+      width: 88%;
+      margin: 0 0 0 3%;
+      padding: 3%; }
+      main .sandwich .sandwichImage .main_image {
+        margin: 0;
+        border: 0.504vw solid #ffffff;
+        height: 64.8vw; }
+        main .sandwich .sandwichImage .main_image div {
+          display: inline-flex;
+          flex-direction: column; }
+          main .sandwich .sandwichImage .main_image div:nth-child(1) {
+            background-color: rgba(255, 255, 255, 0.9);
+            background-image: url("none");
+            position: absolute;
+            width: 22.032vw;
+            height: 22.032vw;
+            right: -1.08vw;
+            top: -0.72vw;
+            margin-top: 0;
+            user-select: none; }
+            main .sandwich .sandwichImage .main_image div:nth-child(1) p {
+              color: #a47d5e;
+              font-family: Alegreya;
+              font-weight: bold;
+              text-align: center;
+              letter-spacing: 0.072vw; }
+              main .sandwich .sandwichImage .main_image div:nth-child(1) p:nth-child(1) {
+                padding-top: 1.44vw;
+                font-size: 2.88vw;
+                width: 100%;
+                height: auto; }
+              main .sandwich .sandwichImage .main_image div:nth-child(1) p:nth-child(2) {
+                position: absolute;
+                font-size: 11.664vw;
+                width: 100%;
+                top: 2.16vw;
+                height: 40%;
+                color: #56534c; }
+              main .sandwich .sandwichImage .main_image div:nth-child(1) p:nth-child(3) {
+                position: absolute;
+                font-size: 2.88vw;
+                padding-bottom: 0.36vw;
+                width: 100%;
+                height: 20%;
+                bottom: 0.72vw;
+                color: #979285; }
+          main .sandwich .sandwichImage .main_image div:nth-child(2) {
+            background-color: rgba(255, 255, 255, 0.9);
+            background-image: url("none");
+            position: absolute;
+            width: 22.032vw;
+            height: 22.032vw;
+            right: -1.08vw;
+            top: 9vw;
+            margin-top: 12.384vw;
+            user-select: none; }
+            main .sandwich .sandwichImage .main_image div:nth-child(2) p {
+              color: #a47d5e;
+              font-family: Alegreya;
+              font-weight: bold;
+              text-align: center;
+              letter-spacing: 0.072vw; }
+              main .sandwich .sandwichImage .main_image div:nth-child(2) p:nth-child(1) {
+                padding-top: 1.44vw;
+                font-size: 2.88vw;
+                width: 100%;
+                height: auto; }
+              main .sandwich .sandwichImage .main_image div:nth-child(2) p:nth-child(2) {
+                position: absolute;
+                font-size: 11.664vw;
+                width: 100%;
+                top: 2.16vw;
+                height: 40%;
+                color: #56534c; }
+              main .sandwich .sandwichImage .main_image div:nth-child(2) p:nth-child(3) {
+                position: absolute;
+                font-size: 2.88vw;
+                padding-bottom: 0.36vw;
+                width: 100%;
+                height: 20%;
+                bottom: 0.72vw;
+                color: #979285; }
+          main .sandwich .sandwichImage .main_image div:nth-child(3) {
+            background-color: rgba(255, 255, 255, 0.9);
+            background-image: url("../images/readyTime_img.png");
+            position: absolute;
+            width: 22.032vw;
+            height: 22.032vw;
+            right: -1.08vw;
+            top: 18.72vw;
+            margin-top: 24.768vw;
+            user-select: none;
+            background-size: cover; }
+            main .sandwich .sandwichImage .main_image div:nth-child(3) p {
+              color: #a47d5e;
+              font-family: Alegreya;
+              font-weight: bold;
+              text-align: center;
+              letter-spacing: 0.072vw; }
+              main .sandwich .sandwichImage .main_image div:nth-child(3) p:nth-child(1) {
+                padding-top: 1.44vw;
+                font-size: 2.88vw;
+                width: 100%;
+                height: auto; }
+              main .sandwich .sandwichImage .main_image div:nth-child(3) p:nth-child(2) {
+                position: absolute;
+                font-size: 12.312vw;
+                width: 100%;
+                top: 2.16vw;
+                height: 40%;
+                color: #a47d5e; }
+              main .sandwich .sandwichImage .main_image div:nth-child(3) p:nth-child(3) {
+                position: absolute;
+                font-size: 2.88vw;
+                padding-bottom: 0.36vw;
+                width: 100%;
+                height: 20%;
+                bottom: 0;
+                color: #979285; }
+      main .sandwich .sandwichImage a {
+        font-size: 3.888vw;
+        padding: 3.24vw 8.64vw;
+        bottom: 4.5vw;
+        left: 7.875vw; }
+
+  footer {
+    height: 4.32vw;
+    margin: 0 5% 2% 5%;
+    padding: 10.8vw 0; }
+    footer a {
+      font-size: 3.024vw;
+      padding: 0.72vw 0; }
+    footer div:nth-child(1), footer div:nth-child(3) {
+      padding: 0.72vw 0;
+      display: inline-flex;
+      flex-direction: column; }
+    footer div:nth-child(2) {
+      letter-spacing: 0.504vw;
+      font-size: 5.184vw; } }
 
 /*# sourceMappingURL=style.css.map */

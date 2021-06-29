@@ -1,16 +1,57 @@
+@function get-vw($size) {$vw-c: (1000*.01) * 1px; @return ($size/$vw-c) * 1vw;}
+$window-width: get-vw(72px);
+
 @mixin font-face( $font-name, $font-path, $font-weight: 400, $font-style: normal, $support-required: 'modern'){
     @font-face {font-family: $font-name; font-style : $font-style; font-weight: $font-weight; src: url('#{$font-path}.woff2')}}
-@mixin imageAOC($image, $margin) {
-    position: absolute;
+@mixin imageAOC($image, $width, $height, $outline) {
+    display: inline-flex;
+    margin: 1%;
     background-image: url('#{$image}');
     background-size: cover;
-    width: 40%;
-    height: 40%;
-    // margin: 44% 0 0 53%;
-    margin: $margin;
+    width: $window-width*$width;
+    height: $window-width*$height;
     outline: 3px solid rgba(255,255,255,1);
-    outline-offset: -8px;
-}
+    outline-offset: -($window-width*$outline);}
+@mixin sandwichReady($bg-image, $top, $f-size, $margin-top, $f-bottom, $f-color, $width, $height, $f-t-size) {
+        background-color: rgba(#ffffff, 0.9);
+        background-image: url('#{$bg-image}');
+        position: absolute;
+        width: $window-width*$width;
+        height: $window-width*$height;
+        right: -($window-width*0.15);
+        top: $top;
+        margin-top: $margin-top;
+        user-select: none;
+        p {
+            color:#a47d5e;
+            font-family: Alegreya;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: $window-width*0.01;
+            &:nth-child(1) {
+                padding-top: $window-width*0.2;
+                font-size: $window-width*$f-t-size;
+                width: 100%;
+                height: auto;
+            }
+            &:nth-child(2) {
+                position: absolute;
+                font-size: $f-size;
+                width: 100%;
+                top: $window-width*0.3;
+                height: 40%;
+                color: $f-color;
+            }
+            &:nth-child(3) {
+                position: absolute;
+                font-size: $window-width*$f-t-size;
+                padding-bottom: $window-width*0.05;
+                width: 100%;
+                height: 20%;
+                bottom: $f-bottom;
+                color: #979285;
+            }
+        }}
 
 @include font-face("Alegreya", "../fonts/Alegreya-Bold", bold, normal);
 @include font-face("Alegreya", "../fonts/Alegreya-Regular", normal, normal);
@@ -22,17 +63,16 @@
 
 
 * {padding: 0; margin: 0;}
-::-webkit-scrollbar {width: 5px;}
-::-webkit-scrollbar-track {background: #564f4c;}
-::-webkit-scrollbar-thumb {background: #000000;}
+::-webkit-scrollbar {width: $window-width*0.05;} ::-webkit-scrollbar-track {background: #564f4c;} ::-webkit-scrollbar-thumb {background: #000000;}
+
 
 header {
     z-index: 4;
     position: fixed;
     display: inline-flex;
-    line-height: 30px;
+    line-height: $window-width*0.3;
     background-color: #56534c;
-    height: 50px;
+    height: $window-width*0.5;
     width: 100%;
     div {
         color: #ffffff;
@@ -40,12 +80,14 @@ header {
         justify-content: center;
         width: 25%;
         font-family: Scriptina;
-        letter-spacing: 7px;
-        font-size: 30px;
-        img {padding: 0 15px; width: 15px;}
+        letter-spacing: $window-width*0.07;
+        font-size: $window-width*0.3;
+        user-select: none;
+        img {padding: 0 $window-width*0.15; width: $window-width*0.15;}
     }
     .socials {align-items: center;}
     menu {
+        user-select: none;
         color: #ffffff;
         display: inline-flex;
         width: 50%; 
@@ -54,69 +96,70 @@ header {
         font-family: Alegreya;
         font-weight: normal;
         font-style: normal;
-        font-size: 12px;
+        font-size: $window-width*0.12;
     }
     a {
         color: #ffffff;
         line-height: 0;
         text-decoration: none;
-        letter-spacing: 4px;
+        letter-spacing: $window-width*0.04;
     } 
     a:hover {color: rgb(206, 206, 67);}  
 }
-
 main {
     .pastry {
         color: #ffffff;
-        background: url("../images/hero_img.jpg");
+        background: url("../images/breads.jpg");
         background-size: cover;
+        position: relative;
         height: 100vh;
         .shadow{
             position: absolute;
-            z-index: 1;
+            z-index: 0;
             width: 100%;
             height: 100%;
-            margin: 25% 0 0 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 100%;
+            margin: 0 50%;
+            transform: translate(-50%, 0%);
             background-image: radial-gradient(circle at center, #000000 0%, rgba(0, 0, 0, 0) 60%);
         }
-        div {
+        .main-block {
+            z-index: 1;
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             position: absolute;
-            margin-top: 50px;
-            width: 100%;
-            height: fit-content;
-            overflow: hidden;
+            width: 60%;
+            top: 45%;
+            left: 20%;
+            text-align: center;
+            transform: translate(0%, -50%);
             p:nth-child(1) {
                 z-index: 2;
-                margin: 9% 0 3% 0;
+                margin: 9% 0 2% 0;
                 font-family: Playfair;
-                letter-spacing: 3px;
-                font-size: 92px;
+                letter-spacing: $window-width*0.03;
+                font-size: $window-width*0.92;
                 }
             p:nth-child(2) {
                 z-index: 2;
-                margin: 3% 0;
+                margin: 3% 0 4% 0;
                 text-align: center;
                 font-family: Sanchez;
-                letter-spacing: 3px;
-                font-size: 24px;
+                letter-spacing: $window-width*0.03;
+                font-size: $window-width*0.24;
             }
-            .ourMenu {
+            .menu-button {
                 color: #ffffff;
                 z-index: 2;
                 margin: 3% 0;
                 font-family: Sanchez;
-                font-size: 14px;
-                padding: 15px 40px;
+                font-size: $window-width*0.14;
+                padding: $window-width*0.15 $window-width*0.4;
                 text-decoration: none;
-                letter-spacing: 3px;
+                letter-spacing: $window-width*0.03;
                 background-color: rgba($color: #56534c, $alpha: 0.7);
-                border: 1px solid rgba($color: #c9c9c9, $alpha: 0.9);
+                border: $window-width*0.01 solid rgba($color: #c9c9c9, $alpha: 0.9);
                 border-style: dashed;
                 &:hover {
                     background-color: rgba($color: #56534c, $alpha: 1);
@@ -124,25 +167,28 @@ main {
                 }
             }
         }
-        .bulka {
+        .img-separator {
+            background-image: url("../images/bread.svg");
             position: absolute;  
             z-index: 3;
-            width: 50px;
-            bottom: -50px;
+            width: $window-width*0.5;
+            height: $window-width*0.5;
+            bottom: -($window-width*0.5);
             left: 50%;
-            margin-right: -50%;
             transform: translate(-50%, -50%);
         }
     }
     .artOfCakes {
         background-image: url("../images/artOfCake_img.jpg");
         background-size: cover;
-        height: 93vh;
-        .leftcontent {
-            position: absolute;
-            width: 47%;
-            height: 80%;
-            margin: 3% 0 0 4%;
+        height: auto;
+        padding: $window-width*0.5 0 $window-width*0.6 0;
+        display: inline-flex;
+        .leftcontent {    
+            position: relative;
+            width: 94%;
+            height: inherit;
+            margin: 0 0 0 3%;
             div:nth-child(1) {
                 text-align: center;
                 width: 85%;
@@ -150,24 +196,24 @@ main {
                 p:nth-child(1) {
                     font-family: Alegreya;
                     font-weight: bold;
-                    font-size: 52px;
+                    font-size: $window-width*0.52;
                     color: #56534c;
                 }
                 p:nth-child(2) {
                     font-family: Alegreya;
                     font-weight: bold;
-                    font-size: 16px;
+                    font-size: $window-width*0.16;
                     color: #a47d5e;
-                    letter-spacing: 1px;
+                    letter-spacing: $window-width*0.01;
                     margin-bottom: 10%;
                 }
                 p:nth-child(3) {
                     font-family: Montserrat;
                     font-weight: 600;
-                    font-size: 14px;
-                    letter-spacing: 1px;
+                    font-size: $window-width*0.14;
+                    letter-spacing: $window-width*0.01;
                     color: #56534c;
-                    line-height: 1.75em;
+                    line-height: $window-width*0.21;
                 }
             }
             div:nth-child(2) {
@@ -178,7 +224,7 @@ main {
                 p:nth-child(1) {
                     font-family: Alegreya;
                     font-weight: bold;
-                    font-size: 24px;
+                    font-size: $window-width*0.35;
                     color: #56534c;
                 }
                 div:nth-child(2) {
@@ -188,404 +234,666 @@ main {
                     align-items: center;
                     justify-content: center;
                     p:nth-child(1), p:nth-child(3) {
-                        width: 120px;
-                        margin: 0 5px;
+                        width: $window-width*1.2;
+                        margin: 0 $window-width*0.05;
                         padding: 2% 5%;
-                        border-top: 1px solid black;
-                        border-bottom: 1px solid black;
+                        border-top: $window-width*0.01 solid #000000;
+                        border-bottom: $window-width*0.01 solid #000000;
                         color: #56534c;
                         font-family: Alegreya;
                         font-weight: normal;
-                        font-size: 24px;
+                        font-size: $window-width*0.24;
                     }
                     img {
-                        width: 120px;
-                        box-shadow: 0 0 10px 1px black;
+                        width: $window-width*1.2;
                         border-radius: 100%;
                     }
                 }
-                p:nth-child(3) {
+                div:nth-child(3) {
+                    display: inline-flex;
+                    justify-content: space-around;
                     font-family: Scriptina;
                     font-weight: bold;
-                    font-size: 32px;
+                    font-size: $window-width*0.32;
                     color: #a47d5e;
+                    user-select: none;
+                    span {
+                        padding: 0 $window-width*0.2;
+                        font-family: 'Times New Roman', Times, serif;
+                        font-size: $window-width*0.72;
+                        color: rgba(86, 83, 76, 0.5);
+                    }
+                    p {
+                        line-height: $window-width*0.8;
+                    }
                 }
             }
         }
         .rightcontent {
-            position: absolute;
-            width: 47%;
-            height: 80%;
-            margin: 3% 0 0 48%;
-            .img-top-left {
-                @include imageAOC("../images/top_left.jpg", 5.5% 0 0 9.5%);
-            }
-            .img-top-right {
-                @include imageAOC("../images/top_right.jpg", 5.5% 0 0 52.5%)
-            }
-            .img-bottom-right {
-                @include imageAOC("../images/bottom_right.jpg", 43.5% 0 0 52.5%)
-            }
-            .img-bottom-left {
-                @include imageAOC("../images/bottom_left.jpg", 43.5% 0 0 9.5%)
-            }
+            position: relative;
+            width: 94%;
+            height: inherit;
+            margin: 0 0 0 3%;
+            .img-top-left {@include imageAOC("../images/flour.jpg", 2.75, 2.45, 0.1)}
+            .img-top-right {@include imageAOC("../images/Ingredients.jpg", 2.75, 2.45, 0.1)}
+            .img-bottom-right {@include imageAOC("../images/cake.jpg", 2.75, 2.45, 0.1)}
+            .img-bottom-left {@include imageAOC("../images/strawberry_cake.jpg", 2.75, 2.45, 0.1)}
             .img-center {
                 position: absolute;
-                background-image: url("../images/AOC_center.svg");
+                background-image: url("../images/AOC_center.png");
                 background-size: cover;
-                top: 48%;
-                left: 51%;
-                transform: translate(-50%, -50%);
-                width: 35%;
-                height: 40.25%;
+                width: $window-width*2.75;
+                height: $window-width*2.75;
+                transform: translate(50%, 50%);
+                right: 55.5%;
+                top: 0;
+                user-select: none;
                 p {
                     font-family: Alegreya;
                     color: #c9b176;
                     text-align: center;
-                    font-size: 30px;
-                    margin-top: 32.5%;
+                    font-size: $window-width*0.35;
+                    height: 100%;
+                    transform: translate(0%, 30%);
                 }
             }
         }
     }
-	.foodwidget{
-		background-image: url("../images/placeholder.png");
-		background-size: cover; 
-		height: 93vh;
-		.container{
-			display:flex;
-			width: 1260px;
-			margin: 0 auto;
-			.foodcontainer{
-				background-color: white;
-				background:linear-gradient(45deg, transparent 50px, white 0) right;
-				margin-left: 94px;
-				margin-top: 140px;
-				margin-bottom: 108px;
-				width: 965px;
-				height: 512px;
-				display: flex;
-				.rightc{
-					background-image: url("../images/windmill.png") ;
-					background-position: bottom right;
-					background-repeat: no-repeat;
-					width: 545px;
-					height: 512px;
-					.circle{
-						height: 50px;
-						width: 50px;
-						border-radius: 50%;
-						background-color: white;
-						margin-left: -25px;
-						margin-top: -45px;
-					}
-					.text1{
-						margin-top: 80px;
-						margin-left: 65px;
-						font-size: 48px;
-						letter-spacing: 1px;
-						line-height: 30px;
-						color: #56534c;
-						font-weight: 700;
-						font-family: "Alegreya";
-						height: 65px;
-						p{
-							margin: 0;
-						}
-						.p1{
-							font-size: 14px;
-							letter-spacing: 1px;
-							line-height: 30px;
-							color: #a47d5e;
-							font-weight: 700;
-							font-family: "Proxima Nova";
-							margin-top: 14px;
-						}
-					}
-					.text2{
-						margin-top: 70px;
-						margin-left: 65px;
-						font-size: 14px;
-						letter-spacing: 1px;
-						line-height: 20px;
-						color: #56534c;
-						font-family: "Proxima Nova";
-						p{
-							margin: 0;
-						}
-					}
-					.rating{
-						margin-top: 50px;
-						margin-left: 65px;
-						.stars{
-							display: flex;
-							list-style-type: none;
-							padding: 0;
-							margin: 0;
-							li{
-								margin-right: 10px;
-							}
-						}
-					}
-					.slide{
-						margin-top: 37px;
-						margin-left: 65px;
-						.slidee{
-							display: flex;
-							list-style-type: none;
-							align-items: center;
-							padding: 0;
-							.img{
-								margin-left: 14px;
-								margin-right: 14px;
-							}
-						}
-					}
-				}
-			}
-			.kopie{
-				background-image: url("../images/VektorSmartobjekt.png");
-				background-color: rgb(255, 255, 255);
-				background-size: cover;
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				margin: 6% 0 0 50%;
-				p:nth-child(1) {
-					font-size: 20px;
-					font-family: "Alegreya";
-					color: rgb(164, 125, 94);
-					text-transform: uppercase;
-					text-align: center;
-					margin-top: 10%;
-				}
-				p:nth-child(2) {
-					font-size: 80px;
-					font-family: "Alegreya";
-					color: rgb(223, 198, 145);
-					text-transform: uppercase;
-					text-align: center;
-				}
-				p:nth-child(3) {
-					font-size: 18px;
-					font-family: "Alegreya";
-					color: rgb(166, 162, 151);
-					line-height: 1;
-					text-align: center;
-				}
-			}
-		}
-	}
-	.Sandwich {
-		background-color: rgb(243, 241, 233);
-        background-size: cover;
-        height: 130vh;
-		p:nth-child(1){
-			font-size: 48px;
-			font-family: "Alegreya";
-			color: rgb(86, 83, 76);
-			text-align: center;
-		}
-		p:nth-child(2){
-			font-weight: 500;
-			font-size: 12px;
-			font-family: "Alegreya";
-			color: rgb(164, 125, 94);
-			text-transform: uppercase;
-			text-align: center;
-		}
-		.left{
-			position: absolute;
-			width: 20%;
-            height: 100%;
-            margin: 2.5% 0 0 10%;
-			img {
-				margin-top: 15%;
-				margin-left: 35%;
-			}
-			p:nth-child(1){
-				font-family: Alegreya;
-				font-weight: bold;
-				font-size: 30px;
-				color: rgb(164, 125, 94);
-				margin-bottom: 2%;
-			}
-			p:nth-child(2){
-				font-family: Alegreya;
-				font-size: 16px;
-				color: rgb(86, 83, 76);
-				text-transform: capitalize;
-				margin: 5%;
-			}
-		}
-		.right{
-			background-image: url("../images/sandwich.png");
-			background-size: cover;
-			position: absolute;
-			width: 50%;
-            height: 65%;
-			margin: 11% 0 0 40%;
-			div:nth-child(1){
-				position: absolute;
-			}
-			div:nth-child(2){
-				position: absolute;
-			}
-		}
-		.prep{
-			background-color: rgb(255, 255, 255);
-			opacity: 0.9;
-			background-size: cover;
-			position: absolute;
-			width: 200px;
-			height: 200px;
-			margin: 10% 0 0 79.1%;
-			p:nth-child(1) {
-				font-size: 20px;
-				font-family: "Alegreya";
-				color: rgb(164, 125, 94);
-				text-transform: uppercase;
-				text-align: center;
-				margin-top: 10%;
-			}
-			p:nth-child(2) {
-				font-size: 80px;
-				font-family: "Alegreya";
-				color: rgb(86, 83, 76);
-				text-transform: uppercase;
-				text-align: center;
-			}
-			p:nth-child(3) {
-				font-size: 18px;
-				font-family: "Alegreya";
-				color: rgb(166, 162, 151);
-				line-height: 1;
-				text-align: center;
-			}
-		}
-		.cook{
-			background-color: rgb(255, 255, 255);
-			opacity: 0.9;
-			background-size: cover;
-			position: absolute;
-			width: 200px;
-			height: 200px;
-			margin: 22% 0 0 79.1%;
-			p:nth-child(1) {
-				font-size: 20px;
-				font-family: "Alegreya";
-				color: rgb(164, 125, 94);
-				text-transform: uppercase;
-				text-align: center;
-				margin-top: 10%;
-			}
-			p:nth-child(2) {
-				font-size: 80px;
-				font-family: "Alegreya";
-				color: rgb(86, 83, 76);
-				text-transform: uppercase;
-				text-align: center;
-			}
-			p:nth-child(3) {
-				font-size: 18px;
-				font-family: "Alegreya";
-				color: rgb(166, 162, 151);
-				line-height: 1;
-				text-align: center;
-			}
-		}
-		.kopie{
-			background-image: url("../images/VektorSmartobjekt.png");
-			background-color: rgb(255, 255, 255);
-			background-size: cover;
-			position: absolute;
-			width: 200px;
-			height: 200px;
-			margin: 34% 0 0 79.1%;
-			p:nth-child(1) {
-				font-size: 20px;
-				font-family: "Alegreya";
-				color: rgb(164, 125, 94);
-				text-transform: uppercase;
-				text-align: center;
-				margin-top: 10%;
-			}
-			p:nth-child(2) {
-				font-size: 80px;
-				font-family: "Alegreya";
-				color: rgb(223, 198, 145);
-				text-transform: uppercase;
-				text-align: center;
-			}
-			p:nth-child(3) {
-				font-size: 18px;
-				font-family: "Alegreya";
-				color: rgb(166, 162, 151);
-				line-height: 1;
-				text-align: center;
-			}
-		}
-		.FullRecipe {
-			color: rgb(223, 198, 145);
-			margin: 42% 0 0 37%;
-			font-weight: bold;
-			font-family: Alegreya;
-			font-size: 14px;
-			padding: 15px 40px;
-			position:absolute;
-			text-transform: uppercase;
-			text-decoration: none;
-			letter-spacing: 3px;
-			background-color: rgba($color: rgb(255, 255, 255), $alpha: 1);
-			border: 1px solid rgba($color: rgb(223, 198, 145), $alpha: 1);
-			border-style: dashed;
-			&:hover {
-				background-color: rgba($color: rgb(255, 255, 255), $alpha: 1);
-				border-style: solid;
-			}
-		}
-		footer{
-			position: absolute;
-			display: inline-flex;
-			line-height: 30px;
-			background-color: rgb(243, 241, 233);
-			height: 7%;
-			width: 100%;
-			margin-top: 55%;
-			div {
-				color: rgb(53, 51, 47);
-				display: inline-flex;
-				justify-content: center;
-				width: 25%;
-				font-family: Scriptina;
-				letter-spacing: 7px;
-				font-size: 30px;
-				img {padding: 0 15px; width: 15px;}
-			}
-			menu {
-				border-top: 2px solid rgb(194, 190, 186);
-				border-bottom: 1px solid rgb(194, 190, 186);
-				color: rgb(53, 51, 47);
-				display: inline-flex;
-				width: 50%; 
-				justify-content: space-between;
-				align-items: center;
-				font-family: Alegreya;
-				font-weight: bold;
-				font-style: normal;
-				font-size: 14px;
-				margin: 0 10%
-			}
-			a {
-				color: rgb(53, 51, 47);
-				line-height: 0;
-				text-decoration: none;
-				letter-spacing: 4px;
-			} 
-			a:hover {color: rgb(206, 206, 67);} 
-			
-		}
-		
-	}
+    .tastyPancakes {
+        color: #ffffff;
+        background: url("../images/tastyPancakes_img.jpg");
+        background-size: 100%;
+        background-position: left bottom;
+        position: relative;
+        padding: $window-width*1.25 0 $window-width*0.75 0;
+        .pancakeCard {
+            transform: translate(50%, 0);
+            right: $window-width*2;
+            position: relative;  
+            width: $window-width*9;
+            height: $window-width*4.55;
+            box-shadow: 0 0 $window-width*0.3 $window-width*0.04 rgba(0,0,0,0.5);
+            border-radius: 0 0 0 $window-width*0.8;
+            .pancakeImage {
+                clip-path: polygon(100% 0, 100% 100%, 10% 100%, 0 92%, 0 0);
+                position: absolute;
+                background: url("../images/pancake.jpg");
+                background-size: cover;
+                background-position-x: 60%;
+                width: 40%;
+                height: 100%;
+                .circle {
+                    position: absolute;
+                    width: $window-width*0.6;
+                    height: $window-width*0.6;
+                    border-radius: 100%;
+                    background-color: #ffffff;
+                    transform: translate(50%, 50%);
+                    right: 0;
+                    bottom: 50%;
+                    box-shadow: 0 0 $window-width*0.1 $window-width*0.01 rgba(#000000, 0.5);
+                }
+            }
+            .pancakeInfo {
+                position: absolute;
+                background-color: #ffffff;
+                background-image: url("../images/mill.png");
+                background-repeat: no-repeat;
+                background-position: bottom right;
+                width: 60%;
+                height: 100%;
+                right: 0;
+                div {
+                    font-family: Alegreya;
+                    font-weight: bold;
+                    &:nth-child(1){
+                        padding: $window-width*0.4 0 0 $window-width*0.35;
+                        color: #56534c;
+                        font-size: $window-width*0.48;
+                    }
+                    &:nth-child(2) {
+                        padding-left: $window-width*0.35;
+                        color: #a47d5e;
+                        font-size: $window-width*0.16;
+                        letter-spacing: $window-width*0.01;
+                    }
+                    &:nth-child(3) {
+                        font-family: Montserrat;
+                        font-weight: 600;
+                        font-size: $window-width*0.12;
+                        color: #56534c;
+                        padding: $window-width*0.4 $window-width*0.35 5% $window-width*0.35;
+                        letter-spacing: $window-width*0.015;
+                        line-height: 1.5vw;
+                    }
+                    &:nth-child(4) {
+                        padding-left: 7%;
+                        user-select: none;
+                        img {
+                            padding-right: 1%;
+                            width: $window-width*0.2;
+                            height: $window-width*0.2;
+                        }
+                    }
+                    &:nth-child(5) {
+                        padding: $window-width*0.25 $window-width*0.35 $window-width*0 $window-width*0;
+                        width: 100%;
+                        height:fit-content;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        button {
+                            background-color: transparent;
+                            margin: 0 $window-width*0.05;
+                            border: 0;
+                            box-shadow: 0 0 0 $window-width*0.02 #5a5750;
+                            width: $window-width*0.35;
+                            height: $window-width*0.35;
+                            border-radius: 100%;
+                        }
+                        .arrow {
+                            border: solid #5a5750;
+                            border-width: 0 $window-width*0.025 $window-width*0.025 0;
+                            display: inline-block;
+                            padding: $window-width*0.035;
+                        } 
+                        .right {transform: rotate(-45deg); -webkit-transform: rotate(-45deg);}
+                        .left {transform: rotate(135deg);-webkit-transform: rotate(135deg);}
+                        button:hover{
+                            box-shadow: 0 0 0 $window-width*0.02 #000000;
+                            background-color: rgba(#d9bda5, 1);
+                            cursor: pointer;
+                        }
+                        a {
+                            margin: 0 2.5%;
+                            img {
+                                box-shadow: 0 $window-width*0.05 $window-width*0.1 $window-width*0.01 rgba($color: #000000, $alpha: 0.9);
+                                border-radius: 100%;
+                                width: $window-width*0.9;
+                                height: $window-width*0.9;
+                                background-size: cover;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+        .readyTime {
+            @include sandwichReady("../images/field.png", -($window-width*0.15), $window-width*0.72, 0, $window-width*0.1, #56534c, 1.7, 1.7, 0.16);
+            background-color: transparent;
+            background-size: cover;
+            box-shadow: -1vw 3vh $window-width*0.3 $window-width*0.01 rgba($color: #000000, $alpha: 0.25);
+            right: $window-width*1.75;
+            top: $window-width*0.5;
+        }
+    }
+    .sandwichName {
+        width: 100%;
+        height: $window-width*1;
+        padding-top: $window-width*0.1;
+        text-align: center;
+        font-family: Alegreya;
+        font-weight: bold;
+        p {
+            &:nth-child(1) {
+                font-size: $window-width*0.52;
+                color: #56534c;
+                letter-spacing: $window-width*0.01;
+            }
+            &:nth-child(2) {
+                font-size: $window-width*0.16;
+                color: #a47d5e;
+            }
+        }
+    }
+    .sandwich {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: inline-flex;
+        .ingridients {
+            width: 25%;
+            height: auto;
+            padding: 3% 0 0 4%;
+            div {
+                padding: 0 $window-width*0.1;
+                margin-bottom: $window-width*0.3;
+                img {
+                    margin-left: 50%;
+                    transform: translate(-50%, 0%);
+                    width: $window-width*0.9;
+                    height: $window-width*0.9;
+                    border-radius: 100%;
+                    box-shadow: 0 $window-width*0.05 $window-width*0.1 $window-width*0.01 rgba($color: #000000, $alpha: 0.3);
+                    margin-bottom: $window-width*0.05;
+                }
+                p {
+                    text-align: center;
+                    &:nth-child(2) {
+                        font-family: Alegreya;
+                        font-weight: bold;
+                        color: #a47d5e;
+                        font-size: $window-width*0.32;
+                        letter-spacing: $window-width*0.01;
+                        margin-bottom: $window-width*0.1;
+                    }
+                    &:nth-child(3) {
+                        font-family: Montserrat;
+                        font-weight: 600;
+                        color: #56534c;
+                        font-size: $window-width*0.14;
+                        letter-spacing: $window-width*0.01;
+                    }
+                }
+            }
+        }
+        .sandwichImage {
+            width: 63%;
+            height: auto;
+            margin: 0 0 0 3%;
+            padding: 3% 3% 0 3%;
+            .main_image {
+                position: relative;
+                display: flex;
+                align-items: center;
+                margin: 7% 3% 10% 3%;
+                border: $window-width*0.07 solid #ffffff;
+                height: 75%;
+                background-image: url("../images/jibarito_sandwich.jpg");
+                background-size: cover;
+                background-position: center;
+                box-shadow: 0 $window-width*0.05 $window-width*0.2 $window-width*0.1 rgba($color: #000000, $alpha: 0.25);
+                div {
+                    display: inline-flex;
+                    flex-direction: column;
+                    &:nth-child(1) {
+                        @include sandwichReady(none, -($window-width*0.15), $window-width*0.72, 0, $window-width*0.1, #56534c, 1.7, 1.7, 0.16);
+                    }
+                    &:nth-child(2) {
+                        @include sandwichReady(none, -($window-width*0.15), $window-width*0.72, $window-width*1.72, $window-width*0.1, #56534c, 1.7, 1.7, 0.16)
+                    }
+                    &:nth-child(3) {
+                        @include sandwichReady("../images/field.png", -($window-width*0.15), $window-width*0.9, $window-width*3.44, 0, #a47d5e, 1.7, 1.7, 0.16);
+                        background-size: cover;
+                    }
+                }
+            }
+            a {
+                position: absolute;
+                color: #f2c76c;
+                font-family: Alegreya;
+                font-weight: normal;
+                font-size: $window-width*0.18;
+                padding: $window-width*0.15 $window-width*0.4;
+                text-decoration: none;
+                letter-spacing: $window-width*0.02;
+                background-color: #ffffff;
+                border: $window-width*0.02 solid #f2c76c;
+                border-style: dashed;
+                bottom: $window-width*0.625;
+                &:hover {
+                    background-color: rgba($color: #f2c76c, $alpha: 1);
+                    border-style: solid;
+                    color: #ffffff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+footer {
+    width: 90%;
+    height: $window-width*0.6;
+    margin: 2% 5% 2% 5%;
+    color: #000;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: $window-width*0.14;
+    user-select: none;
+    a {
+        font-family: Alegreya;
+        font-weight: normal;
+        font-style: normal;
+        color: #000000;
+        text-decoration: none;
+        letter-spacing: $window-width*0.04;
+        &:hover {color: rgb(206, 206, 67);}
+    } 
+    div:nth-child(1), div:nth-child(3) {
+        display: inline-flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border-top: $window-width*0.01 solid #c2beba;
+        border-bottom: $window-width*0.01 solid #c2beba;
+    }
+    div:nth-child(2) {
+        margin: 0 3% $window-width*0.2 3%;
+        display: inline-flex;
+        justify-content: center;
+        width: 20%;
+        font-family: Scriptina;
+        letter-spacing: $window-width*0.07;
+        font-size: $window-width*0.36;
+    }
 }
 
+@media (orientation: portrait) and (min-resolution: 72dpi) {
+    ::-webkit-scrollbar {width: 0;}
+    header {
+        display: flex;
+        flex-direction: column;
+        line-height: $window-width*0.75;
+        height: $window-width*1.95;
+        width: 100%;
+        
+        div {
+            width: 100%;
+            justify-content: center;
+            font-size: $window-width*0.65;
+            user-select: none;
+        }
+		.socials {
+            width: 100%;
+            justify-content: left;
+            font-size: $window-width*0.65;
+			user-select: none;
+        }
+        menu {
+            width: 100%;
+            justify-content: space-around;
+            margin: ($window-width*0.35) 0 0 0;
+            font-size: $window-width*0.35;
+        }
+        a:hover, a:focus {color: rgb(206, 206, 67);}  
+        
+    }
+    main {
+        .pastry {
+            background-size: cover;
+            padding: 0 0 0 3%;
+            .shadow{
+                margin: 0 0 0 47%;
+                width: 100%;
+                background-image: radial-gradient(circle at center, #000000 0%, rgba(0, 0, 0, 0) 60%);
+            }
+            .main-block {
+                width: 98%;
+                margin-left: 2%;
+                top: 50%;
+                left: 0;
+                p:nth-child(1) {
+                    margin: 0;
+                    font-size: $window-width*1.68;
+                    }
+                p:nth-child(2) {
+                    margin: 10% 5%;
+                    font-size: $window-width*0.72;
+                }
+                .menu-button {
+                    font-size: $window-width*0.56;
+                    padding: $window-width*0.6 $window-width*1.6;
+                }
+            }
+            .img-separator {
+                width: $window-width*1.5;
+                height: $window-width*1.5;
+                bottom: -($window-width*1.5);
+                left: 52.5%;
+            }
+        }
+        .artOfCakes {
+            padding: $window-width*0.5 0 $window-width*0.6 2.5%;
+            display: block;
+            .leftcontent {
+                margin: 0 3% 0 2.5%;
+                div:nth-child(1) {
+                    p:nth-child(1) {
+                        font-size: $window-width*1.75;
+                    }
+                    p:nth-child(2) {
+                        font-size: $window-width*0.48;
+                        // margin-bottom: 10%;
+                    }
+                    p:nth-child(3) {
+                        font-size: $window-width*0.14*3;
+                        line-height: $window-width*0.21*3;
+                    }
+                }
+                div:nth-child(2) {
+                    p:nth-child(1) {
+                        font-size: $window-width*0.35*3;
+                    }
+                    div:nth-child(2) {
+                        p:nth-child(1), p:nth-child(3) {
+                            width: $window-width*2;
+                            padding: 3% 8%;
+                            // margin: 0 1%;
+                            font-size: $window-width*0.24*3;
+                        }
+                        img {
+                            width: $window-width*1.2*3;
+                        }
+                    }
+                    div:nth-child(3) {
+                        font-size: $window-width*0.28*3;
+                        padding: $window-width*0.5 0 0 0;
+                        span {
+                            font-size: $window-width*0.64*3;
+                        }
+                        p {
+                            line-height: $window-width*1;
+                        }
+                    }
+                }
+            }
+            .rightcontent {
+                width: 83%;
+                margin: $window-width 0 0 7.75%;
+                .img-top-left {@include imageAOC("../images/top_left.jpg", 2.75*1.94, 2.45*2, 0.2)}
+                .img-top-right {@include imageAOC("../images/top_right.jpg", 2.75*1.94, 2.45*2, 0.2)}
+                .img-bottom-right {@include imageAOC("../images/bottom_right.jpg", 2.75*1.94, 2.45*2, 0.2)}
+                .img-bottom-left {@include imageAOC("../images/bottom_left.jpg", 2.75*1.94, 2.45*2, 0.2)}
+                .img-center {
+                    width: $window-width*2.75*1.75;
+                    height: $window-width*2.75*1.75;
+                    right: 50%;
+                    top: 5%;
+                    p {
+                        font-size: $window-width*0.35*1.75;
+                    }
+                }
+            }
+        }
+        .tastyPancakes {
+            background-size: cover;
+            padding: $window-width*2.5 0 $window-width*1.5 0;
+            position: relative;
+            .pancakeCard {
+                right: $window-width*5;
+                width: $window-width*12;
+                height: $window-width*13.75;
+                border-radius: $window-width*2 0 0 0;
+                box-shadow: 0 0 $window-width*1 $window-width*0.04 rgba(#000000, 1);
+                .pancakeImage {
+                    clip-path: none;
+                    background: url("../images/pancake.jpg");
+                    background-size: 100%;
+                    background-position-x: 60%;
+                    background-position-y: 30%;
+                    width: 100%;
+                    height: $window-width*4;
+                    border-radius: $window-width*2 0 0 0;
+                    .circle {
+                        position: absolute;
+                        width: $window-width*0.6*2.5;
+                        height: $window-width*0.6*2.5;
+                        border-radius: 100%;
+                        background-color: #ffffff;
+                        transform: translate(50%, 50%);
+                        right: 50%;
+                        bottom: 0;
+                        box-shadow: 0 0 $window-width*0.1 $window-width*0.01 rgba(#000000, 0.5);
+                    }
+                }
+                .pancakeInfo {
+                    width: 100%;
+                    height: $window-width*9.75;
+                    margin-top: $window-width*4;
+                    right: 0;
+                    div {
+                        &:nth-child(1){
+                            padding: $window-width*0.75 0 $window-width*0.15 $window-width*0.75;
+                            font-size: $window-width*0.48*2.5;
+                        }
+                        &:nth-child(2) {
+                            padding-left: $window-width*0.75;
+                            font-size: $window-width*0.16*3;
+                            letter-spacing: $window-width*0.01;
+                        }
+                        &:nth-child(3) {
+                            font-size: $window-width*0.12*3;
+                            padding: $window-width*0.4 $window-width*0.75;
+                            line-height: $window-width*0.5;
+                        }
+                        &:nth-child(4) {
+                            padding-left: $window-width*0.75;
+                            img {
+                                padding-right: $window-width*0.1;
+                                width: $window-width*0.2*3;
+                                height: $window-width*0.2*3;
+                            }
+                        }
+                        &:nth-child(5) {
+                            padding: $window-width*0.5 $window-width*0.35 $window-width*0 $window-width*0;
+                            width: 100%;
+                            button {
+                                box-shadow: 0 0 0 $window-width*0.05 #5a5750;
+                                width: $window-width*0.35*2.5;
+                                height: $window-width*0.35*2.5;
+                            }
+                            .arrow {
+                                border: solid #000000;
+                                border-width: 0 $window-width*0.03 $window-width*0.03 0;
+                                padding: $window-width*0.1;
+                            } 
+                            button:hover{
+                                box-shadow: 0 0 0 $window-width*0.05 #000000;
+                                background-color: rgba(#fff, 1);
+                            }
+                            a {
+                                img {
+                                    box-shadow: 0 $window-width*0.1 $window-width*0.25 $window-width*0.01 rgba($color: #000000, $alpha: 1);
+                                    width: $window-width*0.9*2.5;
+                                    height: $window-width*0.9*2.5;
+                                }
+                            }
+                        }
+                    }
+    
+                }
+            }
+            .readyTime {
+                @include sandwichReady("../images/readyTime_img.png", -($window-width*0.15), $window-width*0.72*2.25, 0, $window-width*0.1, #56534c, 1.7*1.8, 1.7*1.8, 0.16*2.5);
+                box-shadow: -1vw 2vh $window-width*0.6 $window-width*0.01 rgba($color: #000000, $alpha: 0.75);
+                right: $window-width*1.25;
+                top: $window-width*0.5;
+            }
+        }
+        .sandwichName {
+            height: $window-width*2.5;
+            padding: $window-width*0.3 0 $window-width*0.6*1.75 0;
+            p {
+                &:nth-child(1) {
+                    font-size: $window-width*0.52*2.5;
+                }
+                &:nth-child(2) {
+                    font-size: $window-width*0.16*2.5;
+                }
+            }
+        }
+        .sandwich {
+            overflow-x: hidden;
+            position: relative;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            .ingridients {
+                display: inline-flex;
+                flex-direction: row;
+                width: 100%;
+                padding: 0 0 $window-width*0.5 0;
+                div {
+                    padding: 0;
+                    img {
+                        width: $window-width*2.5;
+                        height: $window-width*2.5;
+                        margin-bottom: $window-width*0.25;
+                    }
+                    p {
+                        &:nth-child(2) {
+                            font-size: $window-width*0.32*2;
+                            margin-bottom: $window-width*0.3;
+                        }
+                        &:nth-child(3) {
+                            padding: 0 $window-width*0.25;
+                            font-size: $window-width*0.14*2.5;
+                        }
+                    }
+                }
+            }
+            .sandwichImage {
+                width: 88%;
+                margin: 0 0 0 3%;
+                padding: 3%;
+                .main_image {
+                    margin: 0;
+                    border: $window-width*0.07 solid #ffffff;
+                    height: $window-width*9;
+                    div {
+                        display: inline-flex;
+                        flex-direction: column;
+                        &:nth-child(1) {
+                            @include sandwichReady(none, -($window-width*0.1), $window-width*0.72*2.25, 0, $window-width*0.1, #56534c, 1.7*1.8, 1.7*1.8, 0.16*2.5);
+                        }
+                        &:nth-child(2) {
+                            @include sandwichReady(none, ($window-width*1.25), $window-width*0.72*2.25, $window-width*1.72, $window-width*0.1, #56534c, 1.7*1.8, 1.7*1.8, 0.16*2.5)
+                        }
+                        &:nth-child(3) {
+                            @include sandwichReady("../images/readyTime_img.png", ($window-width*2.6), $window-width*0.9*1.9, $window-width*3.44, 0, #a47d5e, 1.7*1.8, 1.7*1.8, 0.16*2.5);
+                            background-size: cover;
+                        }
+                    }
+                }
+                a {
+                    font-size: $window-width*0.18*3;
+                    padding: $window-width*0.15*3 $window-width*0.4*3;
+                    bottom: $window-width*0.625;
+                    left: $window-width*0.625*1.75;
+                }
+            }
+        }
+    }
+    footer {
+        height: $window-width*0.6;
+        margin: 0 5% 2% 5%;
+        padding: $window-width*1.5 0;
+        a {
+            font-size: $window-width*0.14*3;
+            padding: $window-width*0.1 0;
+        } 
+        div:nth-child(1), div:nth-child(3) {
+            padding: $window-width*0.1 0;
+            display: inline-flex;
+            flex-direction: column;
+        }
+        div:nth-child(2) {
+            letter-spacing: $window-width*0.07;
+            font-size: $window-width*0.36*2;
+        }
+    }
+}
